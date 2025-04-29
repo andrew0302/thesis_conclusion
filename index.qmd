@@ -4,7 +4,7 @@ title: "thesis_conclusion"
 
 # Conclusion
 
-## The Problem: Ground Truth Needs More Than Good Will
+## The Problem: Ground Truthing Requires Focus
 
 - Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices remains slow.
 - Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.
