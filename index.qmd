@@ -6,17 +6,18 @@ title: "thesis_conclusion"
 
 ## The Problem: Ground Truthing Requires Focus
 
-- Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices remains slow.
-- Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.
-- The **cost of collecting meaningful, high-quality datasets** — particularly for complex constructs like values, intentions, or intelligence — is **underappreciated and underfunded**. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation.
+- Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices, from collection, to analysis remains slow.
+- Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.[maybe write instead what's good about current work - i.e what have they prioritized so far]
+- The **cost of collecting meaningful, high-quality datasets** — particularly for complex constructs like values, intentions, or intelligence — is **underappreciated and underfunded**. [Thesis contributions here.] Whether a simple or complex ground-truthing problem, treating the phenomenon of interest like a construct has benefits. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation. 
 - Without better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start.
+
+
 
 ## Lessons from Other Fields: Registered Reports and the Science of Measurement
 
 - In fields like psychology and medicine, **Registered Reports** emerged to separate the design of a study from its results, reducing biases like hindsight bias and outcome switching.
-- Other fields actively **study how to measure complex constructs**: e.g., psychometrics for cognitive ability, epidemiology for disease burden, and survey methodology for social phenomena.
-- These fields show that **developing good measurement instruments** is a dedicated scientific effort — not a side activity.
-- If AI research depends critically on ground-truth data, then the field needs a **dedicated research agenda focused on ground-truth design and measurement science**.
+- Other fields actively **study how to measure complex constructs**: e.g., psychometrics for cognitive ability, epidemiology for disease burden, and criminology for recidivism. These fields show that **developing good measurement instruments** is a dedicated scientific effort — not a side activity. 
+- If AI research depends critically on ground-truth data, then the field needs a **dedicated research agenda focused on ground-truth design and measurement science**. Beyond lessons learned in other fields are ground-truthing specific questions. 
 
 ## Biases in AGI Research Highlight the Need for Careful Grounding
 
