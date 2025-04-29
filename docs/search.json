@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices remains slow.\nCurrent incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.\nThe cost of collecting meaningful, high-quality datasets — particularly for complex constructs like values, intentions, or intelligence — is underappreciated and underfunded. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation.\nWithout better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start.\n\n\n\n\n\nIn fields like psychology and medicine, Registered Reports emerged to separate the design of a study from its results, reducing biases like hindsight bias and outcome switching.\nOther fields actively study how to measure complex constructs: e.g., psychometrics for cognitive ability, epidemiology for disease burden, and survey methodology for social phenomena.\nThese fields show that developing good measurement instruments is a dedicated scientific effort — not a side activity.\nIf AI research depends critically on ground-truth data, then the field needs a dedicated research agenda focused on ground-truth design and measurement science.\n\n\n\n\n\nIn our ICSE-SEIS 2023 paper, we critique unscientific performance claims in AGI-related work.\nAGI research is especially vulnerable to confirmation bias, wishful thinking, and premature performance claims without rigorous benchmarks.\nDefining the constructs we aim to measure (e.g., “intelligence” in LLMs) must be a scientific task in itself. Intelligence may manifest differently in AI systems than in humans, requiring new conceptualizations and new measurement instruments.\nWithout careful construct definition and measurement, claims about AGI capabilities risk being scientifically meaningless.\n\n\n\n\n\nMicropublications are modular, peer-reviewed publications that focus on specific research artifacts like datasets, annotation protocols, or measurement plans.\nExtending the Registered Reports model, we can approve data collection protocols before data is collected, including sampling design, measurement instruments, and annotation strategies.\nDecentralized contributors (e.g., multiple labs or individuals) could publish individual datasets under a shared, peer-reviewed protocol.\nThis would move ground-truth collection toward transparent, modular, and cumulative science, rather than isolated, one-off efforts.\n\n\n\n\n\nOur SEIS 2023 paper pushes for open, linked, reproducible artifacts, not just final models or results.\nOur CHI 2023 paper critiques the opacity of machine learning artifacts and calls for linking data, documentation, and transparent evaluation processes.\nAlexandria:\n\nA web platform combining Wikipedia-style collaborative editing with GitHub-style version control.\nSupports the CREDIT taxonomy for structured contributor recognition.\nProof of concept: Built almost entirely by student developers under supervision, showing that decentralized academic innovation is possible.\nA few additional steps would yield a fully operational infrastructure supporting micropublication of ground-truth artifacts.\n\n\n\n\n\n\nResearchers pre-register their ground-truth collection plans, including constructs, instruments, and expected properties of the data.\nPeer-reviewed protocols are made public before data collection.\nAnnotators, coders, and dataset curators are properly credited through micropublications.\nDatasets grow openly, collaboratively, with tracked provenance and version control.\nThis infrastructure builds trustworthy, reproducible foundations for the next generation of AI and AGI research.\n\n\n\n\n\nThe AI/ML research community, conferences, funding agencies, and publishers must recognize ground-truth data creation as a first-class research contribution.\nNew formats like data-focused Registered Reports and micropublications should be adopted.\nBetter data design enables better science, more responsible innovation, and safer, more meaningful AI systems."
+  },
+  {
+    "objectID": "index.html#the-problem-ground-truth-needs-more-than-good-will",
+    "href": "index.html#the-problem-ground-truth-needs-more-than-good-will",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices remains slow.\nCurrent incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.\nThe cost of collecting meaningful, high-quality datasets — particularly for complex constructs like values, intentions, or intelligence — is underappreciated and underfunded. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation.\nWithout better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start."
+  },
+  {
+    "objectID": "index.html#lessons-from-other-fields-registered-reports-and-the-science-of-measurement",
+    "href": "index.html#lessons-from-other-fields-registered-reports-and-the-science-of-measurement",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "In fields like psychology and medicine, Registered Reports emerged to separate the design of a study from its results, reducing biases like hindsight bias and outcome switching.\nOther fields actively study how to measure complex constructs: e.g., psychometrics for cognitive ability, epidemiology for disease burden, and survey methodology for social phenomena.\nThese fields show that developing good measurement instruments is a dedicated scientific effort — not a side activity.\nIf AI research depends critically on ground-truth data, then the field needs a dedicated research agenda focused on ground-truth design and measurement science."
+  },
+  {
+    "objectID": "index.html#biases-in-agi-research-highlight-the-need-for-careful-grounding",
+    "href": "index.html#biases-in-agi-research-highlight-the-need-for-careful-grounding",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "In our ICSE-SEIS 2023 paper, we critique unscientific performance claims in AGI-related work.\nAGI research is especially vulnerable to confirmation bias, wishful thinking, and premature performance claims without rigorous benchmarks.\nDefining the constructs we aim to measure (e.g., “intelligence” in LLMs) must be a scientific task in itself. Intelligence may manifest differently in AI systems than in humans, requiring new conceptualizations and new measurement instruments.\nWithout careful construct definition and measurement, claims about AGI capabilities risk being scientifically meaningless."
+  },
+  {
+    "objectID": "index.html#micropublication-models-capturing-data-collection-as-a-first-class-output",
+    "href": "index.html#micropublication-models-capturing-data-collection-as-a-first-class-output",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Micropublications are modular, peer-reviewed publications that focus on specific research artifacts like datasets, annotation protocols, or measurement plans.\nExtending the Registered Reports model, we can approve data collection protocols before data is collected, including sampling design, measurement instruments, and annotation strategies.\nDecentralized contributors (e.g., multiple labs or individuals) could publish individual datasets under a shared, peer-reviewed protocol.\nThis would move ground-truth collection toward transparent, modular, and cumulative science, rather than isolated, one-off efforts."
+  },
+  {
+    "objectID": "index.html#building-infrastructure-for-transparent-ground-truth",
+    "href": "index.html#building-infrastructure-for-transparent-ground-truth",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Our SEIS 2023 paper pushes for open, linked, reproducible artifacts, not just final models or results.\nOur CHI 2023 paper critiques the opacity of machine learning artifacts and calls for linking data, documentation, and transparent evaluation processes.\nAlexandria:\n\nA web platform combining Wikipedia-style collaborative editing with GitHub-style version control.\nSupports the CREDIT taxonomy for structured contributor recognition.\nProof of concept: Built almost entirely by student developers under supervision, showing that decentralized academic innovation is possible.\nA few additional steps would yield a fully operational infrastructure supporting micropublication of ground-truth artifacts."
+  },
+  {
+    "objectID": "index.html#the-vision-toward-responsible-ground-truth-for-ai-and-agi",
+    "href": "index.html#the-vision-toward-responsible-ground-truth-for-ai-and-agi",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Researchers pre-register their ground-truth collection plans, including constructs, instruments, and expected properties of the data.\nPeer-reviewed protocols are made public before data collection.\nAnnotators, coders, and dataset curators are properly credited through micropublications.\nDatasets grow openly, collaboratively, with tracked provenance and version control.\nThis infrastructure builds trustworthy, reproducible foundations for the next generation of AI and AGI research."
+  },
+  {
+    "objectID": "index.html#concluding-call-to-action",
+    "href": "index.html#concluding-call-to-action",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "The AI/ML research community, conferences, funding agencies, and publishers must recognize ground-truth data creation as a first-class research contribution.\nNew formats like data-focused Registered Reports and micropublications should be adopted.\nBetter data design enables better science, more responsible innovation, and safer, more meaningful AI systems."
+  },
+  {
+    "objectID": "index.html#the-problem-ground-truthing-requires-focus",
+    "href": "index.html#the-problem-ground-truthing-requires-focus",
+    "title": "thesis_conclusion",
+    "section": "",
+    "text": "Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices remains slow.\nCurrent incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.\nThe cost of collecting meaningful, high-quality datasets — particularly for complex constructs like values, intentions, or intelligence — is underappreciated and underfunded. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation.\nWithout better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start."
+  }
+]
