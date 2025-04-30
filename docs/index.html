@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -122,6 +142,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#the-vision-toward-responsible-ground-truth-for-ai-and-agi" id="toc-the-vision-toward-responsible-ground-truth-for-ai-and-agi" class="nav-link" data-scroll-target="#the-vision-toward-responsible-ground-truth-for-ai-and-agi">The Vision: Toward Responsible Ground Truth for AI and AGI</a></li>
   <li><a href="#concluding-call-to-action" id="toc-concluding-call-to-action" class="nav-link" data-scroll-target="#concluding-call-to-action">Concluding Call to Action</a></li>
   </ul></li>
+  <li><a href="#sec-appendix" id="toc-sec-appendix" class="nav-link" data-scroll-target="#sec-appendix">Appendix</a>
+  <ul class="collapse">
+  <li><a href="#appendix-a-citation-trends-plot" id="toc-appendix-a-citation-trends-plot" class="nav-link" data-scroll-target="#appendix-a-citation-trends-plot">Appendix A: Citation Trends Plot</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -149,14 +173,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
+<p>AI systems are a direct product of the data used to train and evaluate them, and the data is a direct product of the processes we put in place to generate it. Work over the past decade has emerged explaining limitations of commonly re-used datasets, with many commonly used ‘benchmark’ datasets showing a lacking of representativeness <span class="citation" data-cites="hullman2022worst">(<a href="#ref-hullman2022worst" role="doc-biblioref">Hullman et al., 2022</a>)</span>, measurement quality <span class="citation" data-cites="jacobs2021measurement">(<a href="#ref-jacobs2021measurement" role="doc-biblioref">Jacobs &amp; Wallach, 2021</a>)</span>, perspective taking in the annotations <span class="citation" data-cites="cabitza2023toward">(<a href="#ref-cabitza2023toward" role="doc-biblioref">Cabitza et al., 2023</a>)</span>, and completeness in reporting of the annotation process <span class="citation" data-cites="geiger2020garbage geiger2021garbage">(<a href="#ref-geiger2020garbage" role="doc-biblioref">Geiger et al., 2020</a>, <a href="#ref-geiger2021garbage" role="doc-biblioref">2021</a>)</span>. Although improvements to data collection processes have been proposed, they are at best slowly being adopted, and at worst being largely ignored. This issue is further exacerbated by the increasingly sophisticated qualities we aim to evaluate systems on, that in turn are challenging to define and measure (e.g.&nbsp;‘intelligence’, ‘fairness’) <span class="citation" data-cites="jacobs2021measurement">(<a href="#ref-jacobs2021measurement" role="doc-biblioref">Jacobs &amp; Wallach, 2021</a>)</span>. Furthermore, the human-like behavior of the sophisticated systems we are evaluating are a prime target for anthropomorphistically biased mis-interpretations <span class="citation" data-cites="altmeyer2024position">(<a href="#ref-altmeyer2024position" role="doc-biblioref">Altmeyer et al., 2024</a>)</span>. It is thus crucial that we put in place better practices. The qualities of AI systems in the future will be determined by practices we set in place today: the efforts we spend to refine how we design, collect and analyze training/evaluation data will determine the real-world performance of the AI systems we will build.</p>
+<p>The case study in this thesis proposes enriching design, collection, analysis and reporting of training/evaluation data for AI systems, using knowledge from the social sciences <span class="citation" data-cites="beck2022improving">(<a href="#ref-beck2022improving" role="doc-biblioref">Beck et al., 2022</a>)</span>, metrology (measurement science) <span class="citation" data-cites="welty2019metrology">(<a href="#ref-welty2019metrology" role="doc-biblioref"><strong>welty2019metrology?</strong></a>)</span>, and work in the computational sciences on ‘ground-truthing’ <span class="citation" data-cites="cabitza2023toward">(<a href="#ref-cabitza2023toward" role="doc-biblioref">Cabitza et al., 2023</a>)</span>. Components of this framework have all been proposed elsewhere, some of which have been common practice in the social sciences for decades. However, the efforts this thesis reports are substantially greater in terms of considering design than typical benchmark datasets. They require re-thinking of the meaning of the data, and the gathering of knowledge from multiple fields on how to collect and analyze it. Open questions remain about next steps in the primary case study, and for the field as a whole.</p>
+<p>More importantly, questions remain as to how AI research, as it is currently conducted, can implement these solutions. As it stands, components of our current knowledge gathering apparatus - science as it is now practiced, with regards to ‘AI’ and related subfields - is poorly positioned to address these issues. The ever increasing volume of published manuscripts related to “AI” makes it impossible to stay abreast of the overall field: 10% of over 4 million publications indexed on the SCOPUS academic database in 2024, up from around 7% in 2022, had terms related to AI in their title, keywords or abstracts (see Appendix A). The number of submitted manuscripts also shows increases year over year, with conferences like NeurIPS receiving upwards of 12k submissions in 2023<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, making it more and more difficult to find reviewers, and by extension to monitor the overall quality of the field <span class="citation" data-cites="Zhang_2022">(<a href="#ref-Zhang_2022" role="doc-biblioref">Zhang et al., 2022</a>)</span>.</p>
+<p>This conclusiory manuscript thus highlights the crucial challenge for academic study of AI in the coming decade: how best to develop an infrastructure that allows for the study of how best to build systems with little - or at the very least, substantially less - harmful bias. It highlights the need for identifiable academic publication venues that gather works on the study of ground-truthing, more modern publication formats that allow for dataset requirements to be studied prior to their collection, and for infrastructure that allows the burden of their collection to be distributed among stakeholders. It concludes that, while works like the case study embedded in this thesis are necessary, the various fields studying topics related to AI are poorly positioned to implement them.</p>
 <section id="the-problem-ground-truthing-requires-focus" class="level2">
 <h2 class="anchored" data-anchor-id="the-problem-ground-truthing-requires-focus">The Problem: Ground Truthing Requires Focus</h2>
-<ul>
-<li>Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices, from collection, to analysis remains slow.</li>
-<li>Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.[maybe write instead what’s good about current work - i.e what have they prioritized so far]</li>
-<li>The <strong>cost of collecting meaningful, high-quality datasets</strong> — particularly for complex constructs like values, intentions, or intelligence — is <strong>underappreciated and underfunded</strong>. [Thesis contributions here.] Whether a simple or complex ground-truthing problem, treating the phenomenon of interest like a construct has benefits. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation.</li>
-<li>Without better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start.</li>
-</ul>
+<p>-Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices, from collection, to analysis remains slow. - Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.[maybe write instead what’s good about current work - i.e what have they prioritized so far] - The <strong>cost of collecting meaningful, high-quality datasets</strong> — particularly for complex constructs like values, intentions, or intelligence — is <strong>underappreciated and underfunded</strong>. [Thesis contributions here.] Whether a simple or complex ground-truthing problem, treating the phenomenon of interest like a construct has benefits. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation. - Without better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start.</p>
 </section>
 <section id="lessons-from-other-fields-registered-reports-and-the-science-of-measurement" class="level2">
 <h2 class="anchored" data-anchor-id="lessons-from-other-fields-registered-reports-and-the-science-of-measurement">Lessons from Other Fields: Registered Reports and the Science of Measurement</h2>
@@ -215,12 +238,66 @@ ul.task-list li input[type="checkbox"] {
 <li>New formats like data-focused Registered Reports and micropublications should be adopted.</li>
 <li>Better data design enables better science, more responsible innovation, and safer, more meaningful AI systems.</li>
 </ul>
+<p>One study in Canada in 2012 showed that one third of all academic output comes form PhD students <span class="citation" data-cites="lariviere2012shoulders">(<a href="#ref-lariviere2012shoulders" role="doc-biblioref">Larivière, 2012</a>)</span>. One study showed the decline of citations of PhD theses over time <span class="citation" data-cites="lariviere2008declining">(<a href="#ref-lariviere2008declining" role="doc-biblioref">Larivière et al., 2008</a>)</span>. Perhaps there are other, more productive ways to contribute.</p>
+</section>
+</section>
+<section id="sec-appendix" class="level1">
+<h1>Appendix</h1>
+<section id="appendix-a-citation-trends-plot" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-a-citation-trends-plot">Appendix A: Citation Trends Plot</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
 
 
 </section>
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-altmeyer2024position" class="csl-entry" role="listitem">
+Altmeyer, P., Demetriou, A. M., Bartlett, A., &amp; Liem, C. (2024). Position: Stop making unscientific AGI performance claims. <em>arXiv Preprint arXiv:2402.03962</em>.
+</div>
+<div id="ref-beck2022improving" class="csl-entry" role="listitem">
+Beck, J., Eckman, S., Chew, R., &amp; Kreuter, F. (2022). Improving labeling through social science insights: Results and research agenda. <em>International Conference on Human-Computer Interaction</em>, 245–261.
+</div>
+<div id="ref-cabitza2023toward" class="csl-entry" role="listitem">
+Cabitza, F., Campagner, A., &amp; Basile, V. (2023). Toward a perspectivist turn in ground truthing for predictive computing. <em>Proceedings of the AAAI Conference on Artificial Intelligence</em>, <em>37</em>, 6860–6868.
+</div>
+<div id="ref-geiger2021garbage" class="csl-entry" role="listitem">
+Geiger, R. S., Cope, D., Ip, J., Lotosh, M., Shah, A., Weng, J., &amp; Tang, R. (2021). " garbage in, garbage out" revisited: What do machine learning application papers report about human-labeled training data? <em>arXiv Preprint arXiv:2107.02278</em>.
+</div>
+<div id="ref-geiger2020garbage" class="csl-entry" role="listitem">
+Geiger, R. S., Yu, K., Yang, Y., Dai, M., Qiu, J., Tang, R., &amp; Huang, J. (2020). Garbage in, garbage out? Do machine learning application papers in social computing report where human-labeled training data comes from? <em>Proceedings of the 2020 Conference on Fairness, Accountability, and Transparency</em>, 325–336.
+</div>
+<div id="ref-hullman2022worst" class="csl-entry" role="listitem">
+Hullman, J., Kapoor, S., Nanayakkara, P., Gelman, A., &amp; Narayanan, A. (2022). The worst of both worlds: A comparative analysis of errors in learning from data in psychology and machine learning. <em>Proceedings of the 2022 AAAI/ACM Conference on AI, Ethics, and Society</em>, 335–348.
+</div>
+<div id="ref-jacobs2021measurement" class="csl-entry" role="listitem">
+Jacobs, A. Z., &amp; Wallach, H. (2021). Measurement and fairness. <em>Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency</em>, 375–385.
+</div>
+<div id="ref-lariviere2012shoulders" class="csl-entry" role="listitem">
+Larivière, V. (2012). On the shoulders of students? The contribution of PhD students to the advancement of knowledge. <em>Scientometrics</em>, <em>90</em>(2), 463–481.
+</div>
+<div id="ref-lariviere2008declining" class="csl-entry" role="listitem">
+Larivière, V., Zuccala, A., &amp; Archambault, É. (2008). The declining scientific impact of theses: Implications for electronic thesis and dissertation repositories and graduate studies. <em>Scientometrics</em>, <em>74</em>(1), 109–121.
+</div>
+<div id="ref-Zhang_2022" class="csl-entry" role="listitem">
+Zhang, Y., Yu, F.-Y., Schoenebeck, G., &amp; Kempe, D. (2022). A system-level analysis of conference peer review. <em>Proceedings of the 23rd ACM Conference on Economics and Computation</em>, 1041–1080. <a href="https://doi.org/10.1145/3490486.3538235">https://doi.org/10.1145/3490486.3538235</a>
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

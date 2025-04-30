@@ -19,4 +19,5 @@ format:
     toc: true
 
 
-
+csl: apa.csl
+bibliography: references.bib

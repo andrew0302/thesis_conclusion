@@ -4,13 +4,24 @@ title: "thesis_conclusion"
 
 # Conclusion
 
+
+AI systems are a direct product of the data used to train and evaluate them, and the data is a direct product of the processes we put in place to generate it. Work over the past decade has emerged explaining limitations of commonly re-used datasets, with many commonly used 'benchmark' datasets showing a lacking of representativeness [@hullman2022worst], measurement quality [@jacobs2021measurement], perspective taking in the annotations [@cabitza2023toward], and completeness in reporting of the annotation process [@geiger2020garbage; @geiger2021garbage]. Although improvements to data collection processes have been proposed, they are at best slowly being adopted, and at worst being largely ignored. This issue is further exacerbated by the increasingly sophisticated qualities we aim to evaluate systems on, that in turn are challenging to define and measure (e.g. 'intelligence', 'fairness') [@jacobs2021measurement]. Furthermore, the human-like behavior of the sophisticated systems we are evaluating are a prime target for anthropomorphistically biased mis-interpretations [@altmeyer2024position]. It is thus crucial that we put in place better practices. The qualities of AI systems in the future will be determined by practices we set in place today: the efforts we spend to refine how we design, collect and analyze training/evaluation data will determine the real-world performance of the AI systems we will build. 
+
+The case study in this thesis proposes enriching design, collection, analysis and reporting of training/evaluation data for AI systems, using knowledge from the social sciences [@beck2022improving], metrology (measurement science) [@welty2019metrology], and work in the computational sciences on 'ground-truthing' [@cabitza2023toward]. Components of this framework have all been proposed elsewhere, some of which have been common practice in the social sciences for decades. However, the efforts this thesis reports are substantially greater in terms of considering design than typical benchmark datasets. They require re-thinking of the meaning of the data, and the gathering of knowledge from multiple fields on how to collect and analyze it. Open questions remain about next steps in the primary case study, and for the field as a whole. 
+
+More importantly, questions remain as to how AI research, as it is currently conducted, can implement these solutions. As it stands, components of our current knowledge gathering apparatus - science as it is now practiced, with regards to 'AI' and related subfields - is poorly positioned to address these issues. The ever increasing volume of published manuscripts related to "AI" makes it impossible to stay abreast of the overall field: 10% of over 4 million publications indexed on the SCOPUS academic database in 2024, up from around 7% in 2022, had terms related to AI in their title, keywords or abstracts (see Appendix A). The number of submitted manuscripts also shows increases year over year, with conferences like NeurIPS receiving upwards of 12k submissions in 2023[^1], making it more and more difficult to find reviewers, and by extension to monitor the overall quality of the field [@Zhang_2022]. 
+
+[^1]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
+
+This conclusiory manuscript thus highlights the crucial challenge for academic study of AI in the coming decade: how best to develop an infrastructure that allows for the study of how best to build systems with little - or at the very least, substantially less - harmful bias. It highlights the need for identifiable academic publication venues that gather works on the study of ground-truthing, more modern publication formats that allow for dataset requirements to be studied prior to their collection, and for infrastructure that allows the burden of their collection to be distributed among stakeholders. It concludes that, while works like the case study embedded in this thesis are necessary, the various fields studying topics related to AI are poorly positioned to implement them. 
+
+
 ## The Problem: Ground Truthing Requires Focus
 
-- Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices, from collection, to analysis remains slow.
+-Despite growing recognition of dataset problems, actual progress toward better ground-truth data practices, from collection, to analysis remains slow. 
 - Current incentives prioritize speed, performance, and novelty rather than careful measurement design or long-term dataset stewardship.[maybe write instead what's good about current work - i.e what have they prioritized so far]
 - The **cost of collecting meaningful, high-quality datasets** — particularly for complex constructs like values, intentions, or intelligence — is **underappreciated and underfunded**. [Thesis contributions here.] Whether a simple or complex ground-truthing problem, treating the phenomenon of interest like a construct has benefits. Collecting good data is expensive, but neglecting this cost leads to cascading problems in AI evaluation. 
 - Without better practices, datasets remain opaque, unexamined, and prone to embedding systemic biases from the start.
-
 
 
 ## Lessons from Other Fields: Registered Reports and the Science of Measurement
@@ -56,3 +67,54 @@ title: "thesis_conclusion"
 - The AI/ML research community, conferences, funding agencies, and publishers must recognize ground-truth data creation as a first-class research contribution.
 - New formats like data-focused Registered Reports and micropublications should be adopted.
 - Better data design enables better science, more responsible innovation, and safer, more meaningful AI systems.
+
+One study in Canada in 2012 showed that one third of all academic output comes form PhD students [@lariviere2012shoulders]. One study showed the decline of citations of PhD theses over time [@lariviere2008declining]. Perhaps there are other, more productive ways to contribute.  
+
+# Appendix {#sec-appendix}
+
+## Appendix A: Citation Trends Plot
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+library("here")
+library("tidyverse")
+library('patchwork')
+library('viridis')
+
+my_colors <- viridis(n=10, option="magma")
+
+# query : (TITLE-ABS-KEY((((machine OR deep OR reinforcement OR supervised OR unsupervised) AND learning) OR (""neural networks"") OR (AI or ""artificial intelligence""))) AND PUBYEAR > 1999 AND PUBYEAR < 2027)
+
+ml_pub_df <- read_csv(here("data", "Scopus-10-Analyze-Year.csv")) %>% mutate(type = "ml_papers")
+
+#query : (PUBYEAR > 1999 AND PUBYEAR < 2027)
+overall_pub_df <- read_csv(here("data", "Scopus-10-Analyze-Year (1).csv")) %>% mutate(type = "overall")
+
+pub_df <- bind_rows(ml_pub_df, overall_pub_df)
+
+p1 <- pub_df %>% filter(YEAR<2025) %>%
+  ggplot(aes(YEAR, citations, color = type, group = type)) +
+  geom_line(linewidth = 1.2) +
+  geom_point(size = 2) +
+  scale_color_manual(values=c(my_colors[3], my_colors[7])) +
+  scale_y_continuous(labels = scales::comma) +
+  labs(title = "SCOPUS Publication #:",
+       subtitle="ML vs. Overall",
+           x = "Year",
+           y = "Number of Publications",
+       color = "Category") +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top")
+
+p2 <- pub_df %>% pivot_wider(names_from = type, values_from = citations) %>%
+  mutate(proportion = ml_papers/overall*100) %>% filter(YEAR<2025) %>%
+  ggplot(aes(YEAR, proportion)) +
+  geom_line(linewidth = 1.2, color=my_colors[5]) +
+  geom_point(size = 2,, color=my_colors[5]) +
+  labs(title = "SCOPUS Publication %",
+       subtitle="ML",
+           x = "Year",
+           y = "Percentage of Publications") +
+      theme_minimal(base_size = 12)
+  
+(p1+p2)
+```
