@@ -17,6 +17,8 @@ format:
       - brand
     css: styles.css
     toc: true
+  docx:
+    number-sections: false
 
 
 csl: apa.csl
