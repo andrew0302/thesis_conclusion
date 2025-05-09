@@ -2,16 +2,27 @@
 title: "A Need for a Contemporary Field"
 ---
 
-AI systems are a direct product of the data used to train and evaluate them. We shape the behavior of AI systems with the processes we use to design, gather, analyze, and report the training and evaluation data. Work over the past decade has emerged explaining limitations of commonly re-used datasets, with many commonly used 'benchmark' datasets showing a lack of representativeness [@hullman2022worst], measurement quality [@jacobs2021measurement], accounting for the full range of reasonable interpretations in terms of annotations [@cabitza2023toward], and completeness in reporting of the annotation process [@geiger2020garbage; @geiger2021garbage]. Although improvements to data collection processes have been proposed, they are at best slowly being adopted, and at worst being largely ignored. This issue is further exacerbated by the increasingly sophisticated qualities we aim to evaluate systems on, that in turn are challenging to define and measure (e.g. 'fairness') [@jacobs2021measurement]. Furthermore, the human-like behavior of the sophisticated systems we are evaluating are a prime target for anthropomorphistically biased mis-interpretations of their outputs, as many aim to behave similar to humans [@altmeyer2024position]. The future qualities of AI systems will be shaped by the data practices we establish today: the degree to which we invest in better design, collection, and analysis of training and evaluation data will determine the real-world performance of the AI systems we will build. It is thus crucial that we put in place better practices. 
+AI systems are a direct product of the data used to train and evaluate them. We shape the behavior of AI systems with the processes we use to design, gather, analyze, and report the training and evaluation data. Work over the past decade has emerged explaining limitations of commonly re-used datasets, with many commonly used 'benchmark' datasets showing a lack of representativeness [@hullman2022worst], measurement quality [@jacobs2021measurement], accounting for the full range of reasonable interpretations in terms of annotations [@cabitza2023toward], and completeness in reporting of the annotation process [@geiger2020garbage; @geiger2021garbage]. Although improvements to data collection processes have been proposed, they are at best slowly being adopted, and at worst being largely ignored. The increasingly sophisticated systems we build have an accompanying cost not only in terms of sheer training data size, but also in the labor required to curate it (e.g. large language models)[@kandpal2025position]. This is exacerbated by the increasingly sophisticated qualities we aim to evaluate systems on, that in turn are challenging to define and measure (e.g. 'fairness') [@jacobs2021measurement]. Furthermore, the human-like behavior of the sophisticated systems we are evaluating are a prime target for anthropomorphistically biased mis-interpretations of their outputs, as many aim to behave similar to humans [@altmeyer2024position]. The future qualities of AI systems will be shaped by the data practices we establish today: the degree to which we invest in better design, collection, and analysis of training and evaluation data will determine the real-world performance of the AI systems we will build. It is thus crucial that we put in place better practices. 
 
 Improving how the field collects benchmark data requires substantial efforts. As an example, the case study in this thesis proposes enriching design, collection, analysis, and reporting of training/evaluation data for AI systems, using knowledge from the social sciences [@beck2022improving], metrology (measurement science) [@welty2019metrology], and work in the computational sciences on 'ground-truthing' [@cabitza2023toward]. It requires *a-priori* empirical investigation of the data collection process in addition to the data collection process itself, in principle for every combination of *construct* (i.e. the latent phenomenon of interest being measured), *content* (e.g. text, video, audio etc. and in some cases also subgroups, e.g. tweets vs. podcast transcripts vs. formal speeches etc.), and for relevant *characteristics* of annotators (i.e. ethnicity, political affiliation, etc.). Open questions remain for the primary case-study as well as for the field as a whole, all of which anticipate future studies, and by extension further efforts. 
 
 Questions remain as to how AI research as it is currently conducted can implement these solutions. As it stands, our current knowledge gathering apparatus - science as it is now practiced and reported - is overburdened. The ever increasing volume of published manuscripts on AI and related topics[^2] makes it impossible to stay abreast of the overall field: 10% of over 4 million publications indexed on the SCOPUS academic database in 2024, up from around 7% in 2022, had terms related to AI in their title, keywords or abstracts (see Appendix A). The number of submitted manuscripts also increases year over year, with popular conferences like NeurIPS receiving upwards of 12k submissions in 2023[^1]. This makes it more and more difficult to find reviewers, and by extension to monitor the overall quality of the field [@Zhang_2022]. These figures do not include preprints posted on servers like arXiv, which show over 42k works with AI related terms in the abstract for 2024, more than doubling the about 17.5k posts in 2019. PhD candidates, who contribute a substantial proportion of academic work [@lariviere2012shoulders], are bogged down by requirements to write and defend theses despite the decreasing trend of thesis citations over time [@lariviere2008declining], and evidence that PhD candidates with fixed duration contracts exceed that duration by several months, resorting to completing their thesis on their own time and risking failing at completion [@van2013took]. Further, publications, and not theses, remain the key factor in the assesment of their value as scientists [@anderson2022effect] - efforts which could be put towards meeting some of this labor gap. Predictably, academics appear to be turning to Large Language Models for assistance, as use is showing in academic work in both peer reviews [@liang2024monitoring], and in manuscripts [@gray2024chatgpt]. This overburden raises questions beyond the poor evaluation of the models that underlie 'AI' to the 'AI' research process itself, as well as to its likelihood of applying improvements. 
 
 [^1]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
-[^2]: terms included AI, artificial intelligence, machine learning, and neural networks. See Appendix for specific search strings
+[^2]: terms included AI, artificial intelligence, machine learning, and neural networks. See Appendix for specific search strings. 
 
 This conclusiory manuscript thus highlights the crucial challenge for academic study of AI in the coming decade: developing an infrastructure that allows for the study of AI, including the data that are its raw materials, with little - or at the very least, substantially less - harmful bias. It highlights the need for identifiable academic publication venues that gather works on the study of ground-truthing, more modern publication formats that allow for dataset requirements to be studied prior to their collection, and for infrastructure that allows the burden of their collection to be distributed among stakeholders. It concludes that, while works like the case study embedded in this thesis are necessary, the various fields studying topics related to AI are poorly positioned to implement them. 
+
+## Increasing data requirements require curation
+
+Contemporary training methods require increasingly large amounts of data. Taking the development of Large Language Models as a use-case, the training dataset for Llama 3 included 15T tokens, up from 2T for Llama 2. Although not all details of the datasets have been shared, and setting aside questions of copywrite, licensing, and ethical concerns, the available text that is likely to have some quality is limited compared to these requirements. Among the refined sources of text available, Wikipedia, which comprises some 6.9M English articles, comprised of approximately 62M pages, is an estimated 5 billion tokens[^4]. If we take the approximate 4.4M papers published in 2024 and indexed on Scopus as an indication, academia published an estimated 45B tokens in that year. If we extend our reach to other repositories, e.g. the approximately 88.3 million academic papers available on Sci-hub would result in an approximate upper boundary of estimate 700B or so. A similar figure might be estimated from libegen and the 7.5M[^5] books there. While academic pursuits clearly result in increasingly massive token counts, we have immediate access to a set of approximately 1.5T. Internet archive has some 44M books, which may yield up to 4.4T, although we expect duplicates with the libgen archive. Thus, a more likely source for the data requirements are repositories like Common Crawl[^6]. 
+
+[^4]: According to [wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia#:~:text=Monthly%20statistics-,Number%20of%20pages,pages%20are%20created%20than%20articles.) at 9 May, 2025.
+[^5]: According to [The Atlantic](https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/LibGen). 
+[^6]: https://commoncrawl.org/
+
+
+
 
 
 ## Increasing Data Quality Requires Focused Study
@@ -78,7 +89,7 @@ It's the 'real' world of publication that matters. As @lariviere2012shoulders no
 
 ## Appendix A: Citation Trends Plot
 
-```{r, echo=FALSE,message=FALSE,warning=FALSE}
+```{r publication_plots, echo=FALSE,message=FALSE,warning=FALSE}
 library("here")
 library("tidyverse")
 library('patchwork')
@@ -148,3 +159,113 @@ OR neural AND networks
 29,690 results in 2022
 33,419 results in 2023
 42,183 in 2024
+
+
+## Appendix C: Token estimates
+
+Taking a study on the word length requirements of education journals as a proxy, @fairbairn2009profile report the following figures:
+
+```{r token_counts,echo=FALSE,message=FALSE,warning=FALSE}
+paper_lengths <- data.frame(
+  TokenRange = factor(c("<3000", "3000-3900", "4000-4900", "5000-5900", 
+                 "6000-6900", "7000-7900", "8000-8900", 
+                 "9000-9990", ">=10000"), 
+                 levels = c("<3000", "3000-3900", "4000-4900", "5000-5900", 
+                 "6000-6900", "7000-7900", "8000-8900", 
+                 "9000-9990", ">=10000")),
+  Count = c(22, 36, 53, 114, 108, 85, 56, 12, 31)
+)
+
+paper_lengths %>%
+  ggplot(aes(x=TokenRange, y=Count, fill=Count)) +
+    geom_point(shape = 21, size = 5) +
+    theme_minimal() +
+    scale_fill_viridis(option="plasma") +  
+  labs(title = "Distribution of Token Counts in Papers",
+       x = "Token Range",
+       y = "Count") + theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+```
+
+```{r}
+# Estimate midpoints for each bin
+midpoints <- c(2500, 3450, 4450, 5450, 6450, 7450, 8450, 9500, 10500)
+
+# Add midpoints to the dataframe
+paper_lengths$Midpoint <- midpoints
+
+# Estimate mean token count
+mean_est <- sum(paper_lengths$Midpoint * paper_lengths$Count) / sum(paper_lengths$Count)
+
+# Calculate weighted variance
+var_est <- sum(paper_lengths$Count * (paper_lengths$Midpoint - mean_est)^2) / sum(paper_lengths$Count)
+
+# Take square root to get standard deviation
+sd_est <- sqrt(var_est)
+
+# Print result
+paste()
+print(paste("SD words: ", sd_est))
+print(paste("Mean words: ", mean_est))
+```
+
+
+https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them?utm_source=chatgpt.com
+According to Open AI, a token is 3/4 of a word
+
+```{r}
+sd_tokens <- sd_est*1.25
+mean_tokens <- mean_est*1.25 
+
+print(paste("SD Tokens: ", round(sd_tokens, 2)))
+print(paste("Mean Tokens: ", round(mean_tokens, 2)))
+
+paste( round(((mean_tokens-sd_tokens) * 4500000) / 1000000000, 2), 
+       " Billion to", 
+       round (((mean_tokens+sd_tokens) * 4500000) / 1000000000, 2), 
+       "Billion tokens per year from academia.")
+
+paste( 4.8*1.25, "Billion tokens from Wikipedia.")
+```
+
+Wikipedia:
+https://en.wikipedia.org/wiki/Wikipedia%3ASize_of_Wikipedia?utm_source=chatgpt.com
+
+
+```{r}
+5000000000/2000000000000*100
+```
+
+
+
+Sci Hub: 
+https://www.sci-hub.mk/
+88343822 documents as of 9 May 2025 13:47. 
+
+```{r}
+(7927.71 * 88343822) / 1000000000 
+```
+
+https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/
+LibGen
+
+7.5 million books and 81 million research papers.
+
+```{r}
+# at about 100k words per book
+(100000*7500000) / 1000000000
+
+(100000*44000000) / 1000000000
+```
+
+
+Llama 2 was 2T tokens, Llama 3 was 15T. I didn't really see where they got their data from. So I made some guesses. 
+
+Looked at Wiki. The whole thing is like 5B. 
+
+Sci-Hub, 88.3M papers, which at 8kish tokens is an upper boundary of 700B or so.
+
+7.5 million books on libgen you get about another 700B or so, at 100k-ish per words. 
+
+Internet archive has some 44 **million** books. 4.4T. 
