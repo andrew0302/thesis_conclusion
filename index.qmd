@@ -5,17 +5,29 @@ editor:
     wrap: 72
 ---
 
-The future qualities of AI systems will be shaped by the data and
-evaluation practices we establish today. AI systems are a direct product
-of the data used to train and evaluate them. We thus indirectly shape
-their behavior via the processes we use to design, gather, analyze, and
-report training and evaluation data [@hullman2022worst]. The datasets we
-create have ongoing effects as they are often re-used
-[@geiger2021garbage], likely because of the amount of work necessary to
-create the data. Data professionals spend more time on data preparation
-and cleansing than they do on model selection, training and deployment
-[^1] [^2] [^3], yet the focus remains on the latter
-[@birhane2022values].
+## Abstract
+
+AI systems are shaped by the training data, algorithm, and evaluation
+data used to build them. Recent work has shown a need for greater
+amounts of data, and greater effort in the design, collection, analysis
+and reporting of data used for building AI systems. Solving these
+problems may require more effort and resources than the field can offer.
+Present work makes suggestions aimed at making better use of labor and
+resources in the AI research field to meet these needs.
+
+## Introduction
+
+The future quality of AI systems will be shaped by the data, evaluation,
+and reporting practices we establish today. AI systems are a product of
+the data used to train and evaluate them, thus we indirectly shape their
+behavior by the processes we design to collect training and evaluation
+data [@hullman2022worst]. Training and evaluation data have ongoing
+effects as they are often re-used [@geiger2021garbage], likely because
+of their high cost. Data professionals spend more time on data
+preparation and cleansing than they do on model selection, training and
+deployment [^1] [^2] [^3], and yet the focus remains on the latter
+[@birhane2022values] with data professionals indicating that they prefer
+the 'model work' over the 'data work' [@sambasivan2021everyone].
 
 [^1]: Anaconda data science report 2022:
     https://www.anaconda.com/resources/whitepaper/state-of-data-science-report-2022
@@ -34,85 +46,190 @@ and cleansing than they do on model selection, training and deployment
 
 [^4]: [landing.ai](https://landing.ai/data-centric-ai#:~:text=%E2%80%9CInstead%20of%20focusing%20on%20the,a%20data%2Dcentric%20approach.%E2%80%9D)
 
-Evidence points to a need for a more sophisticated approach to the
-collection of datasets in AI fields, especially frequently re-used
-benchmarks become 'load-bearing' cornerstones in their niches. Work over
-the past decade has emerged explaining limitations of commonly re-used
-datasets, which include a lack of representativeness
+Decisions made when collecting data comprise the design, whether or not
+they are made consciously and carefully. Work over the past decade has
+emerged explaining limitations of decisions made in the design of
+commonly re-used datasets, which include a lack of representativeness
 [@hullman2022worst], measurement quality [@jacobs2021measurement],
 accounting for the full range of reasonable interpretations in terms of
 annotations [@cabitza2023toward], and completeness in reporting of the
-annotation process [@geiger2021garbage; @daneshjou2021lack].
+annotation process [@geiger2021garbage; @daneshjou2021lack]. Evidence
+points to a need for a more sophisticated approach to the design of
+datasets in AI fields, especially frequently re-used benchmarks that
+become 'load-bearing' cornerstones in their niches.
 
 Although improvements to data collection processes have been proposed,
 they are at best slowly being adopted, and at worst being largely
 ignored. The increasingly sophisticated systems we build have an
 accompanying cost not only in terms of sheer training data size, but
-also in the labor required to curate the data (e.g. Large Language
-Models or LLMs) [@kandpal2025position]. This is exacerbated by the
-increasingly sophisticated qualities we aim to evaluate systems on, that
-in turn are challenging to define and measure e.g. fairness
-[@jacobs2021measurement], and intelligence [@gignac2024defining].
-Furthermore, as many systems aim to behave similar to humans, the
-human-like behavior of the sophisticated systems we are evaluating are a
-prime target for anthropomorphistically biased mis-interpretations of
-their outputs [@altmeyer2024position].
+also in terms of the labor required to curate the data
+[@kandpal2025position]. This is exacerbated by the increasing scale
+required to train systems using the most advanced methods
+[@villalobos2024position], and increasingly sophisticated qualities we
+aim to evaluate systems on, that in turn are challenging to define and
+measure e.g. fairness [@jacobs2021measurement], and intelligence
+[@gignac2024defining]. Furthermore, as many systems aim to behave
+similar to humans, the human-like behavior of the sophisticated systems
+we are evaluating are a prime target for anthropomorphistically biased
+mis-interpretations of their outputs [@altmeyer2024position].
 
-The degree to which we invest in better design, collection, and analysis
-of training and evaluation data will determine the real-world
-performance of the AI systems we will build. It is thus crucial that we
-put in place better practices. The emerging field of *AI metrics*
-focuses on developing best practices for the measurement AI system
-performance [@gignac2024defining], by treating datasets as measurement
-instruments to be developed and maintained \[[@welty2019metrology].
-However, improving how AI fields collect and labels data requires
-substantial efforts beyond the already substantial efforts invested.
-Resources must thus be dedicated to determining what best practices are,
-which will require dedicated research to solve issues unique to training
-vs. evaluation data.
+The degree to which we invest in researching best practices for the
+design, collection, and analysis of training and evaluation data will
+determine the real-world performance of the AI systems we will build. It
+is thus crucial that we put in place better practices. The emerging
+field of *AI metrics* focuses on developing best practices for the
+measurement AI system performance [@gignac2024defining], by treating
+datasets as measurement instruments to be developed and maintained
+[@welty2019metrology]. However, improving how AI fields collect and
+label data requires substantial efforts beyond the already substantial
+efforts invested. Resources must thus be dedicated to determining what
+best practices are, which will require dedicated research to solve
+issues unique to training vs. evaluation data, and to implementing said
+practices.
 
-Firstly, improving the way we design and collect of training data,
-especially data that is likely to be widely re-used, is key to
-developing trustworthy models [@liang2022advances;
-[@welty2019metrology], but will require investment in deliberate and
-informed design, distribution and maintenance. Focus must be put into
-solving sampling problems that are not solved even when the dataset is
-very large, e.g. sampling data for training that is representative of
-the environment or desired behavior in deployment conditions
-[@hullman2022worst]. In some instances, data requirements may be too
-great for this to be currently possible. *Data scarcity*, or a lack of
-sufficient training data, is a common issue with contemporary techniques
-e.g. deep learning, across machine learning fields e.g. computer vision,
-healthcare, natural language processing [@bansal2022systematic]. For
-example, recent generative language models are increasingly being
-trained with text crawled randomly from the internet over more carefully
-curated sources that contain information likely to be true, like
-scientific texts and wikipedia [^5], and still this may not be able to
-keep pace with increasing demands [@villalobos2024position]. A number of
-solutions have been proposed for once data has been collected
-[@bansal2022systematic], but a clearer solution might be to begin with
-more carefully collected data. The challenge is the enormous cost to
-create large training datasets, with one estimate for LLMs being between
-up to 1000 times the training costs, which in turn are estimated as
-being tens of millions USD [@kandpal2025position]. Despite the need for
-solutions in this regard, the overwhelming focus remains on algorithmic
-work [@birhane2022values], and not the creation and curation of
-load-bearing training datasets.
+### Too high a cost?
 
-[^5]: For example, LLama 2 required 2T tokens for training, whereas
-    Llama 3 required 15T tokens. All of Wikipedia and all scientific
-    texts likely collectively amount to less than 1T tokens.
+Questions remain as to how AI research as it is currently conducted can
+develop and implement solutions. This conclusiory manuscript thus
+highlights the crucial challenge for academic study of AI in the coming
+decade: developing an infrastructure that allows for the study of AI,
+including the data that are its raw materials, with little - or at the
+very least, substantially less - harmful bias. It highlights
+shortcomings in the data used for training, and the accompanying 'ground
+truth' (e.g. labels, annotations etc.), along with challenges in
+gathering these at scale, as well as the scientific and annotation labor
+necessary to meet these challenges. It highlights the need for
+identifiable academic publication venues that gather and disseminate
+works on the study of data design, collection, analysis, and reporting
+of data for AI training and evaluation, as well as more modern
+publication formats that allow for dataset requirements to be studied
+prior to their collection, and for infrastructure that allows the burden
+of their collection to be distributed among stakeholders. It concludes
+that, while works like the case study embedded in this thesis are
+necessary, the various fields studying topics related to AI are poorly
+positioned to implement them without substantial modernization.
 
-Secondly, there is substantial room for improvement in terms of the
-practices of data labeling as well. Implementations of such practices
-are also costly. The field of AI metrics distinguishes between a)
-observable AI system behavior from b) the targets of measurement - e.g.
-performance on a benchmark from artificial intelligence - by treating
-them as *computational constructs* - indirectly observable aspects of AI
-system behavior [@gignac]. Thus the process that gives rise to the data,
-which include the annotation interface and task instructions shown to
-annotators, is also a measurement instrument [@beck2022improving]. The
-case study in this thesis contributes to the field of AI metrics by
+## Data challenges
+
+### Training Data
+
+Improving the way we design and collect training data, especially data
+that is likely to be widely re-used, is key to developing trustworthy
+models [@liang2022advances; @welty2019metrology], but requires
+investment in deliberate and informed design, distribution and
+maintenance [@liem2023treat]. Beyond the challenge of gathering data at
+the necessary scale, is the challenge of ensuring that it is generally
+representative of the environment where it is to be deployed
+[@hullman2022worst], has sufficiently diverse coverage of the various
+scenarios it will encounter [@liang2022advances], and is as free as
+possible of bias [@mehrabi2021survey]. Such a process requires
+deliberate design, and cannot be compensated for by increasing the
+amount of data collected [@hullman2022worst].
+
+In some instances, data requirements may be too great for this to be
+currently possible with data that currently exists. *Data scarcity*, or
+a lack of sufficient training data, is a common issue with contemporary
+techniques e.g. deep learning, across machine learning fields e.g.
+computer vision, healthcare, natural language processing
+[@bansal2022systematic]. A number of solutions have been proposed for
+once data has been collected [@bansal2022systematic;
+@alzubaidi2023survey], but a clearer solution might be to begin with
+more carefully collected data. Despite the need for solutions in this
+regard, the overwhelming focus remains on algorithmic work
+[@birhane2022values], and not the creation and curation of load-bearing
+training datasets.
+
+This issue is well illustrated with the most contemporary trends of
+Generative AI systems. Taking the development of Large Language Models
+(LLMs) as a use-case: trends show massive increases in the requirements
+of the training data, with the data for Llama 3 including 15T tokens, up
+from 2T for Llama 2. Although not all details of the datasets have been
+shared, and setting aside questions of copyright, licensing, and ethical
+concerns, any available text that is likely to have some quality is
+limited compared to these requirements. For example, among the more
+refined sources of text available are the 6.9M English Wikipedia
+articles[^5] at an estimated 6.24B tokens. If we extend our reach to
+other repositories, e.g. the approximately 85 million academic papers
+available on Sci-hub[^6] or SCOPUS[^7], we gain a rough estimate of 700B
+tokens. A similar figure might be estimated from libegen and the
+7.5M[^8] books there. The internet archive has some 44M books and texts,
+which may yield up to 4.4T tokens if we assume 'texts' have
+approximately the same length as books. Thus, a more likely source for
+the ever-increasing data requirements are repositories like Common
+Crawl[^9]. But this too has limits, and we are projected to have too
+little human-generated text to continue the increase in model size this
+decade, even if all of Common Crawl is used [@villalobos2024position].
+
+[^5]: According to
+    [wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia#:~:text=Monthly%20statistics-,Number%20of%20pages,pages%20are%20created%20than%20articles.)
+    on 9 May, 2025.
+
+[^6]: According to [sci-hub](https://www.sci-hub.se/about) on 9 May,
+    2025.
+
+[^7]: According to
+    [SCOPUS](https://blog.scopus.com/posts/scopus-roadmap-whats-new-in-2022#:~:text=There%20are%20currently%2087%2B%20million,new%20articles%20per%20day%20indexed.)
+    on 9 May, 2025.
+
+[^8]: According to [The
+    Atlantic](https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/LibGen).
+
+[^9]: According to [Common Crawl](https://commoncrawl.org/) on 9 May,
+    2025.
+
+Beyond the issue of merely acquiring data that exists, is the issue of
+the thus-far-ignored cost of training data. GPT-4 cost an estimated 40M
+USD to train, including human labor, and hardware and energy. Cost for
+frontier models is projected to increase at a rate of 2.4 times per
+year, reaching an estimated 1B USD to train by 2027
+[@cottier2024rising]. Notably, these cost calculations ignore the cost
+of producing the text itself, and though its value is difficult to
+calculate, estimates range from 10-1000 times more than the total cost
+of model training, and exceeding annual revenues of organizations like
+OpenAI that are training the models [@kandpal2025position]. Thus, the
+resources spent do not include the costs of producing training data, for
+which lack of appropriate compensation has given rise to a number of
+lawsuits (e.g. Authors Guild vs. OpenAI [^10]). In other words, the more
+valuable thing is the data and not the model, and the few organizations
+that have the resources to train the models may not have been able to
+afford training if the data weren't acquired at a near-0 cost.
+
+[^10]: https://authorsguild.org/app/uploads/2023/12/Authors-Guild-OpenAI-Microsoft-Class-Action-Complaint-Dec-2023.pdf
+
+Thus, the field of AI must wrestle with opposing issues: we want to
+train models with data that has high quality - e.g we want the data to
+be representative of conditions where the model will be deployed, and
+thus relevant distributions in the training data must reflect the
+environment in which the models will be deployed [@hullman2022worst] -
+but the data requirements to train them appear thus far to be
+ever-increasing [@villalobos2024position], and have thus far not
+included the actual cost of production [@kandpal2025position]. We want
+the data used in training to be 'good' because we want the models to be
+'trustworthy' - in the case of LLMs, we want to have reason to think
+they will generate text that includes claims that we think are true, and
+thus likely prefer text that contains information that is likely to be
+true. Perhaps our closest approximation to 'what is likely to be true'
+is contained in the perspectives presented across all of academic work
+and official reports. And yet, even if there were little to no barriers
+to using all of human academic work to train AI systems, this amount of
+text pales in quantity to the data requirements. And although thus far
+some models have been made available for academic use (e.g. Meta's
+Llama), it is not clear for how long this will be the case, and when, if
+ever, academia will have the resources to train its own.
+
+### Evaluation Data
+
+There is substantial room for improvement in terms of the practices of
+data labeling as well, however implementations of such practices are
+also costly. The field of AI metrics distinguishes between a) observable
+AI system behavior from b) the targets of measurement - e.g. performance
+on a benchmark from artificial intelligence - by treating them as
+*computational constructs* - indirectly observable aspects of AI system
+behavior [@gignac2024defining]. Thus the process that gives rise to the
+data, which include the annotation interface and task instructions shown
+to annotators, is also a measurement instrument [@beck2022improving].
+
+The case study in this thesis contributes to the field of AI metrics by
 proposing enriching design, collection, analysis, and reporting of
 training/evaluation data for AI systems, using knowledge from the social
 sciences [@beck2022improving, @jacobs2021measurement], metrology
@@ -128,150 +245,41 @@ measured), *content* (e.g. text, video, audio etc. and in some cases
 also subgroups, e.g. tweets vs. podcast transcripts vs. formal speeches
 etc.), and for relevant *characteristics* of annotators (i.e. ethnicity,
 political affiliation, etc.). These costs are in addition to the
-annotation labor. Open questions remain for the primary case-study as
-well as for the field as a whole, all of which anticipate future
-studies, and by extension further efforts. Although it is clear there is
-substantial room for improvement along with the repercussive benefits
-from such improvements, they will require resources.
+annotation labor.
 
-Questions remain as to how AI research as it is currently conducted can
-develop and implement solutions. This conclusiory manuscript thus
-highlights the crucial challenge for academic study of AI in the coming
-decade: developing an infrastructure that allows for the study of AI,
-including the data that are its raw materials, with little - or at the
-very least, substantially less - harmful bias. It highlights the need
-for identifiable academic publication venues that gather and disseminate
-works on the study of data design, collection, analysis, and reporting
-of data for AI training and evaluation, as well as more modern
-publication formats that allow for dataset requirements to be studied
-prior to their collection, and for infrastructure that allows the burden
-of their collection to be distributed among stakeholders. It concludes
-that, while works like the case study embedded in this thesis are
-necessary, the various fields studying topics related to AI are poorly
-positioned to implement them without substantial modernization.
-
-## Data challenges
-
-### Training data
-
-Contemporary training methods require increasingly large amounts of
-training data. This has lead to to the development of techniques aimed
-at increasing and/or augmenting available data [@alzubaidi2023survey].
-Beyond the challenge of gathering data at the necessary scale, is the
-challenge of ensuring that it is generally representative of the
-environment where it is to be deployed [@hullman2022worst], has
-sufficiently diverse coverage of the various scenarios it will encounter
-[@liang2022advances], and is as free as possible of bias
-[@mehrabi2021survey]. Such a process requires deliberate design, and
-cannot be compensated for by increasing the amount of data collected
-[@hullman2022worst].
-
-These issues are well illustrated with the most contemporary trends of
-Generative AI systems. Taking the development of Large Language Models
-(LLMs) as a use-case: the training dataset for Llama 3 included 15T
-tokens, up from 2T for Llama 2. Although not all details of the datasets
-have been shared, and setting aside questions of copywrite, licensing,
-and ethical concerns, any available text that is likely to have some
-quality is limited compared to these requirements. Among the refined
-sources of text available, Wikipedia, which comprises some 6.9M English
-articles, comprised of approximately 62M pages over all languages, is an
-estimated 5 billion tokens[^6]. If we take the approximate 4.4M papers
-published in 2024 and indexed on Scopus as an indication, academia
-published an estimated 45B tokens in that year. If we extend our reach
-to other repositories, e.g. the approximately 85 million academic papers
-available on Sci-hub[^7] or SCOPUS[^8] would result in an estimate of
-700B. A similar figure might be estimated from libegen and the 7.5M[^9]
-books there. While academic pursuits result in increasing token counts,
-we have immediate access to a set of approximately 1.5T. Internet
-archive has some 44M books, which may yield up to 4.4T, although we
-expect duplicates with the library genesis archive. Thus, a more likely
-source for the ever-increasing data requirements are repositories like
-Common Crawl[^10]. But this too has limits, and we are projected to have
-too little human-generated text to continue the increase in model size
-this decade [@villalobos2024position].
-
-[^6]: According to
-    [wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia#:~:text=Monthly%20statistics-,Number%20of%20pages,pages%20are%20created%20than%20articles.)
-    at 9 May, 2025.
-
-[^7]: https://www.sci-hub.se/about
-
-[^8]: https://blog.scopus.com/posts/scopus-roadmap-whats-new-in-2022#:\~:text=There%20are%20currently%2087%2B%20million,new%20articles%20per%20day%20indexed.
-
-[^9]: According to [The
-    Atlantic](https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/LibGen).
-
-[^10]: https://commoncrawl.org/
-
-The largest frontier models cost tens of millions of USD to train, and a
-third to a half of that cost is human labor. GPT-4 cost an estimated 40M
-USD for hardware (chips, servers, and networking hardware) and energy,
-which is projected to increase at a rate of 2.4 X per year, reaching an
-estimated 1B USD to train by 2027 [@cottier2024rising]. Notably, this
-cost exceeds annual revenues in companies training large scale LLMs
-[@kandpal2025position]. Human labor responsible for the collection,
-curation, and eventual annotation of training data in addition to the
-training of the model (including researchers, engineers, and managers,
-but not data center employees and operations staff) is estimated at
-29%-49% of the overall cost [@cottier2024rising]. Notably, these cost
-calculations ignore the cost of producing the text itself, and though
-its value is difficult to calculate, estimates range from 10-1000 X more
-than the total cost of the training of the models
-[@kandpal2025position]. In other words, the more valuable thing is the
-data and not the model, and the lack of appropriate compensation for its
-use has given rise to a number of lawsuits (e.g. Authors Guild vs.
-OpenAI [^11]).
-
-[^11]: https://authorsguild.org/app/uploads/2023/12/Authors-Guild-OpenAI-Microsoft-Class-Action-Complaint-Dec-2023.pdf
-
-Thus, the field of AI must wrestle with two opposing issues: we want to
-train models with data that has high quality - e.g we want the data to
-be representative of conditions where the model will be deployed, and
-thus relevant distributions in the training data must reflect the
-environment in which the models will be deployed [@hullman2022worst] -
-but the data requirements to train them appear thus far to be
-ever-increasing [@villalobos2024position]. We want the data used in
-training to be 'good' because we want the models to be 'trustworthy' -
-in the case of LLMs, we want to have reason to think they will generate
-text that includes claims that we think are true, and thus likely prefer
-text that contains information that is likely to be true. Perhaps our
-closest approximation to 'what is likely to be true' is contained in the
-perspectives presented across all of academic work and official reports.
-And yet, even if there were little to no barriers to using all of human
-academic work to train AI systems, this amount of text pales in quantity
-to the data requirements.
-
-### Evaluation data
-
-Despite growing recognition of evaluation data problems
+Although it is clear there is substantial room for improvement along
+with the repercussive benefits from such improvements, they will require
+resources. Despite growing recognition of evaluation data problems
 [@hullman2022worst], which in turn have the potential to lead to harms
 [@mehrabi2021survey], actual progress toward better annotation data
 practices, from collection, to analysis, to reporting remains slow.
 Current incentives prioritize immediately observable proxies for
-accuracy rather than careful measurement design or long-term dataset
-stewardship [@birhane2022values]. Beyond the challenge of gathering data
-at the necessary scale, are issues about the quality of the data itself,
-specifically the quality of the overall process that created the data.
-This challenge is essentially one of measurement [@welty2019metrology].
+accuracy [@birhane2022values] rather than careful measurement design or
+long-term dataset stewardship [@liem2023treat]. Beyond the challenge of
+gathering data at the necessary scale, are issues about the quality of
+the data itself, specifically the quality of the overall process that
+created the data. This challenge is essentially one of measurement
+[@welty2019metrology].
 
 Datasets for evaluation very often contain human input
-[@geiger2020garbage; @geiger2021garbage; @sav]. When collecting
-annotations, labels, or other forms of input from people in order to
-construct training/evaluation datasets, we are attempting to collect
-measurements of latent, unobservable *constructs*
-[@jacobs2021measurement, @gignac2024defining]. In other words, when we
-examine data created from the observations of multiple people in
-aggregate, we do not directly observe e.g. the presence or absence of an
-object in a digital image; rather we observe the probability that a
-person from a given population will indicate the presence of absence of
-the object in the image [@welty2019metrology]. In the parlance of
-psychology, one cannot directly observe an other's intelligence as one
-might observe an other's height [@gignac2024defining]. And even though
-height is observable, our measurements of it are still imperfect: in
-using a measurement device like a ruler multiple times, should we
-measure precisely enough, we would observe variance in each measurement
-with the true score for height imperfectly represented by our collection
-of imperfect measurements [@welty2019metrology].
+[@geiger2020garbage; @geiger2021garbage; @daneshjou2021lack;
+@sav2023annotation]. When collecting annotations, labels, or other forms
+of input from people in order to construct training/evaluation datasets,
+we are attempting to collect measurements of latent, unobservable
+*constructs* [@jacobs2021measurement; @gignac2024defining]. In other
+words, when we examine data created from the observations of multiple
+people in aggregate, we do not directly observe e.g. the presence or
+absence of an object in a digital image; rather we observe the
+probability that a person from a given population will indicate the
+presence of absence of the object in the image [@welty2019metrology]. In
+the parlance of psychology, one cannot directly observe an other's
+intelligence as one might observe an other's height
+[@gignac2024defining]. And even though height is observable, our
+measurements of it are still imperfect: in using a measurement device
+like a ruler multiple times, should we measure precisely enough, we
+would observe variance in each measurement with the true score for
+height imperfectly represented by our collection of imperfect
+measurements [@welty2019metrology].
 
 Any standardized procedure for comparing two or more individuals is
 treated like a measurement instrument in the social sciences
@@ -294,7 +302,7 @@ multiple studies, with observations made using different methods
 
 Thus, the field of AI must wrestle with the opposing pressure of
 accuracy vs. the cost of developing measurement instruments for
-practically infinite use-cases: we want measurements that are as
+practically infinite use-cases: we want measurements that are
 'accurate' - i.e. we want the data to be as clear a representation of
 our phenomenon of interest as it could be - but developing an accurate
 instrument is a costly exercise to add to the cost of collecting the
@@ -304,7 +312,125 @@ challenges. Topics like 'fairness' [@jacobs2021measurement], and
 'intelligence' [@gignac2024defining] are not only challenging to develop
 instruments for, but also to define.
 
-### AI metrics is a field
+## Labor Challenges
+
+### Scientific Labor
+
+As it stands, our current knowledge gathering apparatus - science as it
+is now practiced and reported - is overburdened and inefficient. A
+primary resource is the labor of academic students, with one study in
+2012 showing that one third of all academic output comes from PhD
+students [@lariviere2012shoulders]. PhD students simultaneously show a
+high prevalence of depression and anxiety - as high as 24%, and 17%
+respectively in a recent meta-analysis [@satinsky2021systematic].
+
+PhD students contribute substantially to the body of human knowledge via
+academic publications [@rorstad2015publication]. In parallel, PhD
+candidates are bogged down by requirements to write and defend theses
+despite the decreasing trend of thesis citations over time
+[@lariviere2008declining], and evidence that PhD candidates with fixed
+duration contracts are exceeding that duration by several months,
+resorting to completing their thesis on their own time and risking
+failing at completion [@van2013took]. A thesis defense is a more curated
+experience as the 'peer reviewers' are chosen by the supervisors of the
+student - on the other hand, peer reviewers in the world of academic
+publication are far broader than the networks of the PhD candidate's
+supervisory staff [@lariviere2012shoulders]. Understandably,
+publications, and not theses, remain the key factor in the assessment of
+their value as scientists [@anderson2022effect], with more and more
+thesis content being comprised of academic publications
+[@jackson2013completing].
+
+Further, PhD students contribute to peer-review. Although in some venues
+Early Career Researchers (ECRs; e.g. PhD students, but also Post
+Doctoral Researchers) occurs with supervision\[\^21\], it has been shown
+that ECRs perform a substantial amount of the work but do not receive
+credit [@mcdowell2019co]. Further, ECRs, like PhD students are
+completely responsible for their own reviews in high-volume conferences
+like NeurIPS [@shah2018design].
+
+Predictably, academics appear to be turning to LLMs for assistance, as
+evidence of its use is showing in academic work in both peer reviews
+[@liang2024monitoring], and in manuscripts [@gray2024chatgpt]. This
+overburden raises questions beyond the poor evaluation of the models
+that underlie 'AI' to the 'AI' research process itself, as well as to
+its likelihood of applying improvements.
+
+### Annotation Labor
+
+It has been reported that Open AI hired a San Francisco-based firm that
+sourced annotation labor from Kenya, Uganda, and India to provide the
+human inputs necessary to fine tune their models [^11]. Despite the rate
+of pay being far less than the federal minimum wage in the US, ranging
+from to , OpenAI spent 600k USD in 2021 to label text as being violent,
+sexual, or hatespeech alone. Commonly used platforms like mTurk[^12],
+and Prolific[^13] pay at or near minimum wage in the US. While the
+availability of such services has allowed for rapid gathering of
+evaluation data for AI-related projects, works that highlight data
+scarcity warn that it may be insufficient to meet the needs of coming
+models.
+
+[^11]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
+
+[^12]: https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk
+
+[^13]: https://www.prolific.com/participants
+
+Work in the case study of this thesis further suggests that *more*
+annotation work may be required than is used for current projects, as it
+requires a focus on the development of an annotation instrument prior to
+primary data collection phases, pre-studies to estimate the required
+number of annotators, and accounting for possible variance in
+perspectives. For high-stakes use-cases, such as applications in
+government or healthcare, we may wish to have data independently
+examined prior to its certification for use, similarly to how some
+scholars recommend external examination of AI models prior to deployment
+[@garrett2024testing], which may in turn require further iterations of
+data collection.
+
+## Reporting challenges
+
+### Volume and synthesis
+
+The ever increasing volume of published manuscripts on AI and related
+topics[^14] makes it impossible to stay abreast of the overall field:
+10% of over 4 million publications indexed on the SCOPUS academic
+database in 2024, up from around 7% in 2022, had terms related to AI in
+their title, keywords or abstracts (see Appendix A). The number of
+submitted manuscripts also increases year over year, with popular
+conferences like NeurIPS receiving upwards of 12k submissions in
+2023[^15]. This makes it more and more difficult to find reviewers, and
+by extension to monitor the overall quality of the field [@Zhang_2022].
+These figures do not include preprints posted on servers like arXiv,
+which show over 42k works with AI related terms in the abstract for
+2024, more than doubling the about 17.5k posts in 2019.
+
+[^14]: terms included AI, artificial intelligence, machine learning, and
+    neural networks. See Appendix for specific search strings.
+
+[^15]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
+
+Receiving declining attention are theses. Components currently largely
+absent are peer-reviews (although open review tries to address this) and
+rejected manuscripts - many of which get resubmitted \[citation\].
+Partially absent are teaching materials, conference materials, e.g.
+posters, slides, and recordings of talks etc. Importantly, code scripts
+and/or notebooks, various forms of data, parameters and settings, and
+the actual model(s) produced are often absent. This also doesn't include
+replications, which have been shown to be useful in other fields. Only
+recently are there readily available guidelines to more completely
+report key information: data/model \| sheets / cards,
+[@geiger2021garbage].
+
+Many of the outputs of academic work would benefit from some sort of
+maintenance. i.e. we must treat academic insights like software
+artifacts, with management and possibly updates.
+
+Reviewer quality, and the difficulty in finding reviewers.
+
+## A contemporary field
+
+### AI Metrics should be a field
 
 Data used for training and evaluation of models is of central
 importance. Solutions to problems in both training and evaluation data
@@ -325,89 +451,17 @@ most highly cited academic publication venues, nor is there a focused
 publication venue or conference. Thus, crucial topics remain
 under-resourced and under-researched.
 
-## Labor Challenges
-
-### Scientific Labor
-
-As it stands, our current knowledge gathering apparatus - science as it
-is now practiced and reported - is overburdened and inefficient. The
-ever increasing volume of published manuscripts on AI and related
-topics[^12] makes it impossible to stay abreast of the overall field:
-10% of over 4 million publications indexed on the SCOPUS academic
-database in 2024, up from around 7% in 2022, had terms related to AI in
-their title, keywords or abstracts (see Appendix A). The number of
-submitted manuscripts also increases year over year, with popular
-conferences like NeurIPS receiving upwards of 12k submissions in
-2023[^13]. This makes it more and more difficult to find reviewers, and
-by extension to monitor the overall quality of the field [@Zhang_2022].
-These figures do not include preprints posted on servers like arXiv,
-which show over 42k works with AI related terms in the abstract for
-2024, more than doubling the about 17.5k posts in 2019.
-
-[^12]: terms included AI, artificial intelligence, machine learning, and
-    neural networks. See Appendix for specific search strings.
-
-[^13]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
-
-A primary resource is the labor of academic students, from the bachelor
-to the PhD level. One study in Canada in 2012 showed that one third of
-all academic output comes form PhD students [@lariviere2012shoulders].
-There are clear suggestions to better allocation of this work: e.g. PhD
-candidates are bogged down by requirements to write and defend theses
-despite the decreasing trend of thesis citations over time
-[@lariviere2008declining], and evidence that PhD candidates with fixed
-duration contracts are exceeding that duration by several months,
-resorting to completing their thesis on their own time and risking
-failing at completion [@van2013took]. A thesis defense is a more curated
-experience as the 'peer reviewers' are chosen by the supervisors of the
-student - on the other hand, peer reviewers in the world of academic
-publication are far broader than the networks of the PhD candidate's
-supervisory staff [@lariviere2012shoulders]. Understandably,
-publications, and not theses, remain the key factor in the assesment of
-their value as scientists [@anderson2022effect]. Predictably, academics
-appear to be turning to LLMs for assistance, as evidence of its use is
-showing in academic work in both peer reviews [@liang2024monitoring],
-and in manuscripts [@gray2024chatgpt]. This overburden raises questions
-beyond the poor evaluation of the models that underlie 'AI' to the 'AI'
-research process itself, as well as to its likelihood of applying
-improvements.
-
-Collaborative Replications and Education Project (CREP)
-https://osf.io/wfc6u/
-
-### Annotation Labor
-
-It has been reported that Open AI hired a San Francisco-based firm that
-sourced annotation labor from Kenya, Uganda, and India to provide the
-human inputs necessary to fine tune their models [^14]. Despite the rate
-of pay being far less than the federal minimum wage in the US, ranging
-from to , OpenAI spent 600k USD in 2021 to label text as being violent,
-sexual, or hatespeech alone. Commonly used platforms like mTurk[^15],
-and Prolific[^16] pay at or near minimum wage in the US. While the
-availability of such services has allowed for rapid gathering of
-evaluation data for AI-related projects, works that highlight data
-scarcity warn that it may be insufficient to meet the needs of coming
-models.
-
-[^14]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
-
-[^15]: https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk
-
-[^16]: https://www.prolific.com/participants
-
-Work in the case study of this thesis further suggests that *more*
-annotation work may be required than is used for current projects, as it
-requires a focus on the development of an annotation instrument prior to
-primary data collection phases, pre-studies to estimate the required
-number of annotators, and accounting for possible variance in
-perspectives. For high-stakes use-cases, such as applications in
-government or healthcare, we may wish to have data independently
-examined prior to its certification for use, similarly to how some
-scholars recommend external examination of AI models prior to deployment
-[@garrett2024testing], which may in turn require further iterations of
-data collection.
-
 ### Collaboration to address data requirement challenges
+
+The human labor responsible for the collection, curation, and eventual
+annotation of training data in addition to the training of the model
+(including researchers, engineers, and managers, but not data center
+employees and operations staff) is estimated at 29%-49% of the overall
+cost, which already amounts to tens of millions for frontier models
+[@cottier2024rising]. Thus, a key challenge to implementing better
+practices involves providing labor both in terms of the scientific work
+necessary to design data collection and annotation processes, but also
+to provide the annotations themselves.
 
 One approach to both gathering the necessary training data at scale as
 well as the labels or annotations have been shown in collaborations
@@ -422,27 +476,31 @@ on their smartphones, and/or labels of the species in the images
 from non-scientists [@fortson2012galaxy]. A third example is
 commonvoice.mozilla.org/en, which is a large dataset of speech
 transcription in 76 languages, provided by approximately 150k
-participants [@ardila-etal-2020-common]. These collectively allow for
-the contribution of diverse media for annotation, labor needed to
+participants [@ardila-etal-2020-common]. People are willing to even
+share de-identified medical data as long as they are given agency over
+it [@liang2022advances]. This approach simultaneously allows for the
+contribution of diverse media for annotation, labor needed to annotate
+them.
 
-Another similarly scalable infrastructure for dataset creation might be
-possible by adapting an academic publication format called the
-Registered Report [@chambers2013registered]. Initially designed to
-compensate for editorial decisions being made based on the results,
-rather than the quality of the methods. In many fields, aspects of the
-data collection design, as well as the design of analysis and prediction
-of results occur *a-priori*, in principle not to bias interpretation of
-results. In a Registered Report, researchers submit a manuscript that
-includes information relevant to how the study will be conducted,
-including motivation of the work (i.e. introduction), details of data
-collection processes, as well as analyses. Typical review stages apply,
-i.e. suggestions for revisions or rejections, or the manuscript may
-receive an *in-principle acceptance*, whereby reviewers and editor agree
-to a publication should the methods used in the manuscript either follow
-closely the in-principle accepted version, or appropriate justifications
-be made for any changes that may have occurred. Thus acceptance of
-publications is made based on the strength of the methods, which also
-are strengthened by a peer-review process prior to data collection.
+Another similarly scalable infrastructure for dataset creation within
+academia might be possible by adapting an academic publication format
+called the Registered Report [@chambers2013registered]. Initially
+designed to compensate for editorial decisions being made based on the
+results, rather than the quality of the methods. In many fields, aspects
+of the data collection design, as well as the design of analysis and
+prediction of results occur *a-priori*, in principle not to bias
+interpretation of results. In a Registered Report, researchers submit a
+manuscript that includes information relevant to how the study will be
+conducted, including motivation of the work (i.e. introduction), details
+of data collection processes, as well as analyses. Typical review stages
+apply, i.e. suggestions for revisions or rejections, or the manuscript
+may receive an *in-principle acceptance*, whereby reviewers and editor
+agree to a publication should the methods used in the manuscript either
+follow closely the in-principle accepted version, or appropriate
+justifications be made for any changes that may have occurred. Thus
+acceptance of publications is made based on the strength of the methods,
+which also are strengthened by a peer-review process prior to data
+collection.
 
 The Registered-Report format is exceptionally well-suited to the
 collection of datasets intended for AI training and/or evaluation.
@@ -457,31 +515,25 @@ further allow for the submissions of responses in the form of data that
 conforms to the design in the published manuscript in a decentralized
 fashion, from multiple stakeholders, thus reducing the bias from any
 single data collection point and allowing for the sharing of financial
-and other resource burdens.
+and other resource burdens. As online platforms focused on different
+topics proliferate, they may be attached to approved data collection
+protocols.
 
-## Reporting challenges
+A further approach to contributing more scientific labor involves
+undergraduate bachelor and masters students. CREP is a crowdsourced
+initiative where undergraduate students, under faculty supervision,
+replicate high-impact psychology studies, thus allowing for direct
+instruction of students while provided needed replications of pivotal
+studies [^16]. These replications are pre-registered, and may be
+published. For instance, a meta-analysis of nine student-led
+replications of the "red-romance effect" found no significant effect
+[@wagge2019demonstration], thus functioning both to instruct students
+and contribute to the scientific record. Similar approaches can be taken
+towards annotating data, with students replicating registered data
+collection protocols, or supplying the annotations themselves.
 
-### Volume and synthesis
-
-Sheer volume of academic publications makes it difficult to stay
-current. This doesn't encapsulate all of the scholarly output produced.
-Receiving declining attention are theses. Components currently largely
-absent are peer-reviews (although open review tries to address this) and
-rejected manuscripts - many of which get resubmitted \[citation\].
-Partially absent are teaching materials, conference materials, e.g.
-posters, slides, and recordings of talks etc. Importantly, code scripts
-and/or notebooks, various forms of data, parameters and settings, and
-the actual model(s) produced are often absent. This also doesn't include
-replications, which have been shown to be useful in other fields. Only
-recently are there readily available guidelines to more completely
-report key information: data/model \| sheets / cards,
-[@geiger2021garbage].
-
-Many of the outputs of academic work would benefit from some sort of
-maintenance. i.e. we must treat academic insights like software
-artifacts, with management and possibly updates.
-
-Reviewer quality, and the difficulty in finding reviewers.
+[^16]: [Collaborative Replications and Education
+    Project](CREP)(https://osf.io/wfc6u/)
 
 ### Contemporary Approaches to Academic publication
 
