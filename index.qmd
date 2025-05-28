@@ -116,7 +116,7 @@ positioned to implement them without substantial modernization.
 Improving the way we design and collect training data, especially data
 that is likely to be widely re-used, is key to developing trustworthy
 models [@liang2022advances; @welty2019metrology], but requires
-investment in deliberate and informed design, distribution and
+investment in deliberate and informed design [@hullman2022worst], and
 maintenance [@liem2023treat]. Beyond the challenge of gathering data at
 the necessary scale, is the challenge of ensuring that it is generally
 representative of the environment where it is to be deployed
@@ -135,9 +135,9 @@ computer vision, healthcare, natural language processing
 once data has been collected [@bansal2022systematic;
 @alzubaidi2023survey], but a clearer solution might be to begin with
 more carefully collected data. Despite the need for solutions in this
-regard, the overwhelming focus remains on algorithmic work
+regard, the overwhelming focus in AI fields remains on algorithmic work
 [@birhane2022values], and not the creation and curation of load-bearing
-training datasets.
+datasets.
 
 This issue is well illustrated with the most contemporary trends of
 Generative AI systems. Taking the development of Large Language Models
@@ -146,58 +146,64 @@ of the training data, with the data for Llama 3 including 15T tokens, up
 from 2T for Llama 2. Although not all details of the datasets have been
 shared, and setting aside questions of copyright, licensing, and ethical
 concerns, any available text that is likely to have some quality is
-limited compared to these requirements. For example, among the more
+scarce compared to these requirements. For example, among the more
 refined sources of text available are the 6.9M English Wikipedia
-articles[^5] at an estimated 6.24B tokens. If we extend our reach to
-other repositories, e.g. the approximately 85 million academic papers
-available on Sci-hub[^6] or SCOPUS[^7], we gain a rough estimate of 700B
-tokens. A similar figure might be estimated from libegen and the
-7.5M[^8] books there. The internet archive has some 44M books and texts,
-which may yield up to 4.4T tokens if we assume 'texts' have
-approximately the same length as books. Thus, a more likely source for
-the ever-increasing data requirements are repositories like Common
-Crawl[^9]. But this too has limits, and we are projected to have too
-little human-generated text to continue the increase in model size this
-decade, even if all of Common Crawl is used [@villalobos2024position].
+articles[^5] at an estimated 6.24B tokens[^6] - articles across all
+languages comprise only approximately 10 times that amount. If we extend
+our reach to other repositories, e.g. the approximately 85-90 million
+academic papers available on Sci-hub[^7] or SCOPUS[^8], we gain a rough
+estimate of 700B tokens. A similar figure might be estimated from
+libegen and the 7.5M[^9] books there. The internet archive has some 44M
+books and texts, which may yield up to 4.4T tokens if we assume 'texts'
+have approximately the same length as books. Thus, a more likely source
+for the ever-increasing data requirements are repositories of randomly
+selected text from the internet, like Common Crawl[^10]. But this too
+has limits, and we are projected to have too little human-generated text
+to continue the increase in model size this decade, even if all of
+Common Crawl is used [@villalobos2024position].
 
 [^5]: According to
     [wikipedia](https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia#:~:text=Monthly%20statistics-,Number%20of%20pages,pages%20are%20created%20than%20articles.)
     on 9 May, 2025.
 
-[^6]: According to [sci-hub](https://www.sci-hub.se/about) on 9 May,
+[^6]: Using the conversion method of words to tokens recommended by
+    [Open
+    AI](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them).
+
+[^7]: According to [sci-hub](https://www.sci-hub.se/about) on 9 May,
     2025.
 
-[^7]: According to
+[^8]: According to
     [SCOPUS](https://blog.scopus.com/posts/scopus-roadmap-whats-new-in-2022#:~:text=There%20are%20currently%2087%2B%20million,new%20articles%20per%20day%20indexed.)
     on 9 May, 2025.
 
-[^8]: According to [The
+[^9]: According to [The
     Atlantic](https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/LibGen).
 
-[^9]: According to [Common Crawl](https://commoncrawl.org/) on 9 May,
+[^10]: According to [Common Crawl](https://commoncrawl.org/) on 9 May,
     2025.
 
 Beyond the issue of merely acquiring data that exists, is the issue of
 the thus-far-ignored cost of training data. GPT-4 cost an estimated 40M
-USD to train, including human labor, and hardware and energy. Cost for
+USD to train, including human labor, hardware, and energy. Cost for
 frontier models is projected to increase at a rate of 2.4 times per
 year, reaching an estimated 1B USD to train by 2027
 [@cottier2024rising]. Notably, these cost calculations ignore the cost
 of producing the text itself, and though its value is difficult to
 calculate, estimates range from 10-1000 times more than the total cost
-of model training, and exceeding annual revenues of organizations like
-OpenAI that are training the models [@kandpal2025position]. Thus, the
-resources spent do not include the costs of producing training data, for
-which lack of appropriate compensation has given rise to a number of
-lawsuits (e.g. Authors Guild vs. OpenAI [^10]). In other words, the more
+of model training, and would exceed annual revenues of the organizations
+that are training the models, like OpenAI [@kandpal2025position]. Thus,
+the resources spent do not include the costs of producing training data,
+for which lack of appropriate compensation has given rise to a number of
+lawsuits (e.g. Authors Guild vs. OpenAI [^11]). In other words, the more
 valuable thing is the data and not the model, and the few organizations
 that have the resources to train the models may not have been able to
 afford training if the data weren't acquired at a near-0 cost.
 
-[^10]: https://authorsguild.org/app/uploads/2023/12/Authors-Guild-OpenAI-Microsoft-Class-Action-Complaint-Dec-2023.pdf
+[^11]: https://authorsguild.org/app/uploads/2023/12/Authors-Guild-OpenAI-Microsoft-Class-Action-Complaint-Dec-2023.pdf
 
 Thus, the field of AI must wrestle with opposing issues: we want to
-train models with data that has high quality - e.g we want the data to
+train models with data that has high quality - e.g. we want the data to
 be representative of conditions where the model will be deployed, and
 thus relevant distributions in the training data must reflect the
 environment in which the models will be deployed [@hullman2022worst] -
@@ -221,15 +227,21 @@ ever, academia will have the resources to train its own.
 
 There is substantial room for improvement in terms of the practices of
 data labeling as well, however implementations of such practices are
-also costly. The field of AI metrics distinguishes between a) observable
-AI system behavior from b) the targets of measurement - e.g. performance
-on a benchmark from artificial intelligence - by treating them as
-*computational constructs* - indirectly observable aspects of AI system
-behavior [@gignac2024defining]. Thus the process that gives rise to the
-data, which include the annotation interface and task instructions shown
-to annotators, is also a measurement instrument [@beck2022improving].
+also costly. The field of *AI metrics* distinguishes between a)
+observable AI system behavior, and b) the targets of measurement. In
+other words, a given score on a given 'AI' benchmark designed to measure
+'intelligence' is not itself a direct measure of 'intelligence'. AI
+metrics treats the indirectly observable phenomena as *computational
+constructs* - indirectly observable aspects of AI system behavior, a
+parallel to *constructs* in other fields - indirectly observable
+phenomena [@gignac2024defining]. Thus the benchmark itself is a
+measurement instrument, aimed at measuring a specific aspect of the AI
+system.
 
-The case study in this thesis contributes to the field of AI metrics by
+The process that gives rise to the labels in the data that, which
+include the annotation interface and task instructions shown to
+annotators, is also a measurement instrument [@beck2022improving]. The
+case study in this thesis contributes to the field of AI metrics by
 proposing enriching design, collection, analysis, and reporting of
 training/evaluation data for AI systems, using knowledge from the social
 sciences [@beck2022improving, @jacobs2021measurement], metrology
@@ -254,12 +266,12 @@ resources. Despite growing recognition of evaluation data problems
 [@mehrabi2021survey], actual progress toward better annotation data
 practices, from collection, to analysis, to reporting remains slow.
 Current incentives prioritize immediately observable proxies for
-accuracy [@birhane2022values] rather than careful measurement design or
-long-term dataset stewardship [@liem2023treat]. Beyond the challenge of
-gathering data at the necessary scale, are issues about the quality of
-the data itself, specifically the quality of the overall process that
-created the data. This challenge is essentially one of measurement
-[@welty2019metrology].
+accuracy [@birhane2022values] rather than careful measurement design
+[@beck2022improving] or long-term dataset stewardship [@liem2023treat].
+Beyond the challenge of gathering data at the necessary scale, are
+issues about the quality of the data itself, specifically the quality of
+the overall process that created the data. This challenge is essentially
+one of measurement [@welty2019metrology].
 
 Datasets for evaluation very often contain human input
 [@geiger2020garbage; @geiger2021garbage; @daneshjou2021lack;
@@ -316,65 +328,132 @@ instruments for, but also to define.
 
 ### Scientific Labor
 
-As it stands, our current knowledge gathering apparatus - science as it
-is now practiced and reported - is overburdened and inefficient. A
-primary resource is the labor of academic students, with one study in
-2012 showing that one third of all academic output comes from PhD
-students [@lariviere2012shoulders]. PhD students simultaneously show a
-high prevalence of depression and anxiety - as high as 24%, and 17%
-respectively in a recent meta-analysis [@satinsky2021systematic].
+Addressing the aforementioned data challenges will require substantial
+additional efforts. However our current knowledge gathering apparatus -
+science as it is now practiced and reported - is dated, and inefficient.
+Thus, a substantial amount of the labor will likely have to come from an
+already overburdened work force. A re-consideration of what duties
+comprise academic work is thus warranted, specifically those that
+contribute to the body of human knowledge, and whether they can be
+modernized.
 
-PhD students contribute substantially to the body of human knowledge via
-academic publications [@rorstad2015publication]. In parallel, PhD
-candidates are bogged down by requirements to write and defend theses
-despite the decreasing trend of thesis citations over time
-[@lariviere2008declining], and evidence that PhD candidates with fixed
-duration contracts are exceeding that duration by several months,
-resorting to completing their thesis on their own time and risking
-failing at completion [@van2013took]. A thesis defense is a more curated
-experience as the 'peer reviewers' are chosen by the supervisors of the
-student - on the other hand, peer reviewers in the world of academic
-publication are far broader than the networks of the PhD candidate's
-supervisory staff [@lariviere2012shoulders]. Understandably,
-publications, and not theses, remain the key factor in the assessment of
-their value as scientists [@anderson2022effect], with more and more
-thesis content being comprised of academic publications
-[@jackson2013completing].
+One key example involves a academic writing and publication,
+specifically a primary source of scientific labor in academic settings,
+the PhD student, and their requirements to produce a dissertation or
+thesis document in order to progress in their career. PhD students are
+responsible for as much as a third of all academic output
+[@lariviere2012shoulders], likely by working long hours, including
+weekend hours, constantly under time-pressure to produce output
+[@van2024caught]. Unsurprisingly, PhD students are a vulnerable
+population, showing a high prevalence of depression and anxiety - as
+high as 24%, and 17% respectively in a recent meta-analysis
+[@satinsky2021systematic]. Like all early career researchers (ECRs, i.e.
+PhD students, Post Doctoral Researchers, and Assistant Professors), PhD
+students, contribute substantially to the body of human knowledge via
+academic publication [@rorstad2015publication].
 
-Further, PhD students contribute to peer-review. Although in some venues
-Early Career Researchers (ECRs; e.g. PhD students, but also Post
-Doctoral Researchers) occurs with supervision\[\^21\], it has been shown
-that ECRs perform a substantial amount of the work but do not receive
-credit [@mcdowell2019co]. Further, ECRs, like PhD students are
-completely responsible for their own reviews in high-volume conferences
-like NeurIPS [@shah2018design].
+However, PhD candidates are bogged down by dated requirements to write
+and defend theses despite the declining relevance of the document, and
+the contribution it makes to poor outcomes for the student. For example,
+the trend of thesis citations over time shows decline
+[@lariviere2008declining]. In the Netherlands where this thesis will be
+defended, evidence has shown that PhD candidates with fixed duration
+contracts are exceeding that duration by several months, resorting to
+completing their thesis on their own time and risking failing at
+completion [@van2013took]. Though a key ceremonial moment, a thesis
+defense is substantially less rigorous than a publication: it is
+curated, as the 'peer reviewers' are chosen by the supervisors of the
+student - in the 'real world' of academia, on the other hand, peer
+reviewers are selected from far broader networks than those of the PhD
+candidate's supervisory staff [@lariviere2012shoulders]. It is thus not
+surprising that publications, and not theses, remain the key factor in
+the assessment of the value of Academics as scientists
+[@anderson2022effect]. Although more and more thesis content is being
+comprised of academic publications anyway (i.e. *thesis by publication*,
+@jackson2013completing), the substantial labor required to assemble
+works into a single document, write additional (introductory /
+conclusiory) chapters that are themselves complete manuscripts or nearly
+so, then help organize a formal event for the defense take away from
+more meaningful labor that this workforce could provide.
 
-Predictably, academics appear to be turning to LLMs for assistance, as
-evidence of its use is showing in academic work in both peer reviews
-[@liang2024monitoring], and in manuscripts [@gray2024chatgpt]. This
-overburden raises questions beyond the poor evaluation of the models
-that underlie 'AI' to the 'AI' research process itself, as well as to
-its likelihood of applying improvements.
+A second key example involves a cornerstone of trust in science: the
+editorial peer-review process dates back several hundred years, and
+exists as a means to encourage and maintain the quality of scholarly
+work [@kelly2014peer]. Early career and experienced researchers alike
+contribute to peer-review[^12], labor conservatively valued at over 1.5B
+USD in 2020 [@aczel2021billion]. ECRs perform a substantial amount of
+the work often without credit[^13], and in some cases perform the work
+completely on their own [@mcdowell2019co], especially in high-volume
+conferences like NeurIPS [@shah2018design]. This is a crucial note, as
+the submissions to high-volume conferences show massive increases year
+over year[^14] and struggle to meet the review requirements: e.g.
+NeurIPS 2021 required outreach to recruit over 1k additional
+peer-reviewers beyond the over 7k initial volunteers, to produce the 31k
+reviews needed for the conference[^15]. As conferences continue to grow,
+the amount of review work is being divided among a regularly stable
+labor pool, reducing the attention paid to each individual work, a
+problem exacerbated by the repeat submission of borderline papers - i.e.
+papers that were nearly accepted [@Zhang_2022]. This results in
+important flaws being missed: e.g. [@kapoor2023leakage] show a growing
+crisis across 17 Machine Learning fields from a lack of trustworthy
+results due to data leakage.
+
+[^12]: https://www.elsevier.com/connect/more-early-career-researchers-are-stepping-up-to-peer-review
+
+[^13]: https://elifesciences.org/inside-elife/982053f4/early-career-researchers-views-on-peer-review
+
+[^14]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
+
+[^15]: https://neuripsconf.medium.com/what-we-learned-from-neurips-2020-reviewing-process-e24549eea38f
+
+A third key example involves the ever-increasing volume of published
+manuscripts on AI and related topics[^16], which makes it impossible to
+stay abreast of the overall field. 10% of over 4 million publications
+indexed on the SCOPUS academic database in 2024 had terms related to AI
+in their title, keywords or abstracts (see Appendix A), up from around
+7% in 2022. The number of submitted manuscripts also increases year over
+year, with popular conferences like NeurIPS receiving upwards of 12K
+submissions in 2023[^17]. These figures do not include preprints posted
+on servers like arXiv, which show over 42K works with AI related terms
+in the abstract for 2024, more than doubling the about 17.5K posts in
+2019. This makes it more and more difficult to monitor the overall
+quality of the field [@Zhang_2022].
+
+[^16]: terms included AI, artificial intelligence, machine learning, and
+    neural networks. See Appendix for specific search strings.
+
+[^17]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
+
+This overburden raises questions beyond the poor evaluation of the works
+that underlie our current understanding of 'AI' to the 'AI' research
+process itself, as well as to its likelihood of applying improvements.
+Predictably, and perhaps understandably, academics appear to be turning
+to Large Language Models (LLMs) for assistance, as evidence of its use
+is showing in academic work in both peer reviews [@liang2024monitoring],
+and in manuscripts [@gray2024chatgpt]. This is problematic as LLMs often
+report information that is not factual [@wang-etal-2024-factuality].
+However, a more direct solution might be to re-think how cornerstone
+components of academic work are conducted.
 
 ### Annotation Labor
 
 It has been reported that Open AI hired a San Francisco-based firm that
 sourced annotation labor from Kenya, Uganda, and India to provide the
-human inputs necessary to fine tune their models [^11]. Despite the rate
+human inputs necessary to fine tune their models [^18]. Despite the rate
 of pay being far less than the federal minimum wage in the US, ranging
 from to , OpenAI spent 600k USD in 2021 to label text as being violent,
-sexual, or hatespeech alone. Commonly used platforms like mTurk[^12],
-and Prolific[^13] pay at or near minimum wage in the US. While the
+sexual, or hatespeech alone. Commonly used platforms like mTurk[^19],
+and Prolific[^20] pay at or near minimum wage in the US. While the
 availability of such services has allowed for rapid gathering of
 evaluation data for AI-related projects, works that highlight data
 scarcity warn that it may be insufficient to meet the needs of coming
 models.
 
-[^11]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
+[^18]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
 
-[^12]: https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk
+[^19]: https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk
 
-[^13]: https://www.prolific.com/participants
+[^20]: https://www.prolific.com/participants
 
 Work in the case study of this thesis further suggests that *more*
 annotation work may be required than is used for current projects, as it
@@ -391,24 +470,6 @@ data collection.
 ## Reporting challenges
 
 ### Volume and synthesis
-
-The ever increasing volume of published manuscripts on AI and related
-topics[^14] makes it impossible to stay abreast of the overall field:
-10% of over 4 million publications indexed on the SCOPUS academic
-database in 2024, up from around 7% in 2022, had terms related to AI in
-their title, keywords or abstracts (see Appendix A). The number of
-submitted manuscripts also increases year over year, with popular
-conferences like NeurIPS receiving upwards of 12k submissions in
-2023[^15]. This makes it more and more difficult to find reviewers, and
-by extension to monitor the overall quality of the field [@Zhang_2022].
-These figures do not include preprints posted on servers like arXiv,
-which show over 42k works with AI related terms in the abstract for
-2024, more than doubling the about 17.5k posts in 2019.
-
-[^14]: terms included AI, artificial intelligence, machine learning, and
-    neural networks. See Appendix for specific search strings.
-
-[^15]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
 
 Receiving declining attention are theses. Components currently largely
 absent are peer-reviews (although open review tries to address this) and
@@ -524,7 +585,7 @@ undergraduate bachelor and masters students. CREP is a crowdsourced
 initiative where undergraduate students, under faculty supervision,
 replicate high-impact psychology studies, thus allowing for direct
 instruction of students while provided needed replications of pivotal
-studies [^16]. These replications are pre-registered, and may be
+studies [^21]. These replications are pre-registered, and may be
 published. For instance, a meta-analysis of nine student-led
 replications of the "red-romance effect" found no significant effect
 [@wagge2019demonstration], thus functioning both to instruct students
@@ -532,7 +593,7 @@ and contribute to the scientific record. Similar approaches can be taken
 towards annotating data, with students replicating registered data
 collection protocols, or supplying the annotations themselves.
 
-[^16]: [Collaborative Replications and Education
+[^21]: [Collaborative Replications and Education
     Project](CREP)(https://osf.io/wfc6u/)
 
 ### Contemporary Approaches to Academic publication
