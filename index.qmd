@@ -329,18 +329,26 @@ instruments for, but also to define.
 ### Scientific Labor
 
 Addressing the aforementioned data challenges will require substantial
-additional efforts. However our current knowledge gathering apparatus -
-science as it is now practiced and reported - is dated, and inefficient.
-Thus, a substantial amount of the labor will likely have to come from an
-already overburdened work force. A re-consideration of what duties
-comprise academic work is thus warranted, specifically those that
-contribute to the body of human knowledge, and whether they can be
-modernized.
+additional efforts. The human labor responsible for the collection,
+curation, and eventual annotation of training data in addition to the
+training of models (including researchers, engineers, and managers, but
+not data center employees and operations staff) is estimated at 29%-49%
+of the overall cost, which already amounts to tens of millions for
+frontier models [@cottier2024rising]. Thus, a key challenge to
+implementing better practices involves providing labor both in terms of
+the scientific work necessary to design data collection and annotation
+processes, but also to provide the annotations themselves. However our
+current knowledge gathering apparatus - science as it is now practiced
+and reported - is dated, and inefficient. Thus, a substantial amount of
+the labor will likely have to come from an already overburdened work
+force. A re-consideration of what duties comprise academic work is thus
+warranted, specifically those that contribute to the body of human
+knowledge, and whether they can be modernized.
 
-One key example involves a academic writing and publication,
-specifically a primary source of scientific labor in academic settings,
-the PhD student, and their requirements to produce a dissertation or
-thesis document in order to progress in their career. PhD students are
+One key example involves academic writing and publication, specifically
+a primary source of scientific labor in academic settings, the PhD
+student, and their requirements to produce a dissertation or thesis
+document in order to progress in their career. PhD students are
 responsible for as much as a third of all academic output
 [@lariviere2012shoulders], likely by working long hours, including
 weekend hours, constantly under time-pressure to produce output
@@ -419,44 +427,60 @@ in the abstract for 2024, more than doubling the about 17.5K posts in
 2019. This makes it more and more difficult to monitor the overall
 quality of the field [@Zhang_2022].
 
-[^16]: terms included AI, artificial intelligence, machine learning, and
-    neural networks. See Appendix for specific search strings.
+[^16]: Search terms included AI, artificial intelligence, machine
+    learning, and neural networks. See Appendix B for details.
 
 [^17]: https://github.com/tranhungnghiep/AI-Conference-Info?utm_source=chatgpt.com
 
-This overburden raises questions beyond the poor evaluation of the works
-that underlie our current understanding of 'AI' to the 'AI' research
-process itself, as well as to its likelihood of applying improvements.
-Predictably, and perhaps understandably, academics appear to be turning
-to Large Language Models (LLMs) for assistance, as evidence of its use
-is showing in academic work in both peer reviews [@liang2024monitoring],
-and in manuscripts [@gray2024chatgpt]. This is problematic as LLMs often
-report information that is not factual [@wang-etal-2024-factuality].
-However, a more direct solution might be to re-think how cornerstone
-components of academic work are conducted.
+These examples highlight the overburden of academic scientific labor,
+which in turn raises questions about whether research in fields
+pertaining to AI can sustainably retain an appropriate level of quality,
+while meeting increasing demands. Predictably, and perhaps
+understandably, academics appear to be turning to Large Language Models
+(LLMs) for assistance, as evidence of its use is showing in academic
+work in both peer reviews [@liang2024monitoring], and in manuscripts
+[@gray2024chatgpt]. This is problematic as LLMs often report information
+that is not factual [@wang-etal-2024-factuality]. However, a more
+appropriate direction might be to question how cornerstone components of
+academic work are conducted, and whether they can meet the needs of the
+field in the future.
 
 ### Annotation Labor
 
-It has been reported that Open AI hired a San Francisco-based firm that
-sourced annotation labor from Kenya, Uganda, and India to provide the
-human inputs necessary to fine tune their models [^18]. Despite the rate
-of pay being far less than the federal minimum wage in the US, ranging
-from to , OpenAI spent 600k USD in 2021 to label text as being violent,
-sexual, or hatespeech alone. Commonly used platforms like mTurk[^19],
-and Prolific[^20] pay at or near minimum wage in the US. While the
-availability of such services has allowed for rapid gathering of
-evaluation data for AI-related projects, works that highlight data
-scarcity warn that it may be insufficient to meet the needs of coming
-models.
+The labor required to gather annotations is a key component of the
+evaluation data for machine learning or AI systems, and a substantial
+contributor to the related costs. In specialist categories, e.g. Figure
+Eight, which hires annotators for projects related to defense, salaries
+can range from 41K - 67K USD per year[^18]. Although commonly used
+platforms like mTurk[^19] list only minimum rates of .01 USD per task,
+other services, e.g. Prolific[^20], hire on a per-task basis and pay at
+least minimum wage in the UK. Although these costs may seem manageable,
+they have the potential to balloon at scale. For example, Open AI hired
+a San Francisco-based firm that sourced annotation labor from Kenya,
+Uganda, and India to provide the human inputs necessary to fine tune
+their models [^21]. Despite the pay rate of 2 USD per hour being far
+less than the 7.25 USD federal minimum wage in the US[^22], OpenAI spent
+600K USD in 2021 to label text as being violent, sexual, or hatespeech
+alone. While the availability of such services has allowed for rapid
+gathering of evaluation data for AI-related projects, works that
+highlight data scarcity warn that it may be insufficient to meet the
+needs of coming models, and that the costs of such labor will be very
+high.
 
-[^18]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
+[^18]: according to
+    [glassdoor](https://www.glassdoor.com/Salary/Figure-Eight-Federal-data-annotation-specialist-Salaries-E4588136_D_KO21,47.htm)
+    on May 28, 2025
 
-[^19]: https://en.wikipedia.org/wiki/Amazon_Mechanical_Turk
+[^19]: https://www.mturk.com/pricing#:\~:text=MTurk%20Fee,per%20assignment%20or%20bonus%20payment.
 
 [^20]: https://www.prolific.com/participants
 
+[^21]: https://www.business-humanrights.org/pt/%C3%BAltimas-not%C3%ADcias/openai-and-sama-hired-underpaid-workers-in-kenia-to-filter-toxic-content-for-chatgpt/
+
+[^22]: [usa.gov](https://www.usa.gov/minimum-wage#:~:text=The%20federal%20minimum%20wage%20is,tips%20is%20%242.13%20per%20hour.)
+
 Work in the case study of this thesis further suggests that *more*
-annotation work may be required than is used for current projects, as it
+annotation work may be required than per project than is current, as it
 requires a focus on the development of an annotation instrument prior to
 primary data collection phases, pre-studies to estimate the required
 number of annotators, and accounting for possible variance in
@@ -467,31 +491,144 @@ scholars recommend external examination of AI models prior to deployment
 [@garrett2024testing], which may in turn require further iterations of
 data collection.
 
-## Reporting challenges
-
-### Volume and synthesis
-
-Receiving declining attention are theses. Components currently largely
-absent are peer-reviews (although open review tries to address this) and
-rejected manuscripts - many of which get resubmitted \[citation\].
-Partially absent are teaching materials, conference materials, e.g.
-posters, slides, and recordings of talks etc. Importantly, code scripts
-and/or notebooks, various forms of data, parameters and settings, and
-the actual model(s) produced are often absent. This also doesn't include
-replications, which have been shown to be useful in other fields. Only
-recently are there readily available guidelines to more completely
-report key information: data/model \| sheets / cards,
-[@geiger2021garbage].
-
-Many of the outputs of academic work would benefit from some sort of
-maintenance. i.e. we must treat academic insights like software
-artifacts, with management and possibly updates.
-
-Reviewer quality, and the difficulty in finding reviewers.
-
 ## A contemporary field
 
-### AI Metrics should be a field
+### Collaboration to address data and annotation challenges
+
+One approach to both gathering the necessary training data at scale as
+well as the labels or annotations have been shown in collaborations
+between scientists and the general public. Online platforms, often
+initiated by academics, host and facilitate the creation of various
+resources, ranging from media and other forms of data, labels and
+annotation projects as well as forums for discussion. For example
+inaturalist.org is an online community with over 8 million users who
+make contributions in the form of images taken on their smartphones,
+and/or labels of the species in the images [@van2018inaturalist].
+Zooniverse.org is an online community of over 2.8M users that hosts
+projects defined by scientists to gather labels from non-scientists
+[@fortson2012galaxy]. A third example is commonvoice.mozilla.org/en,
+which is a large dataset of speech transcription in 76 languages,
+provided by approximately 150k participants [@ardila-etal-2020-common].
+Of note, it has been shown that people are willing to even share
+de-identified medical data as long as they are given sufficient
+transparency and agency over its use [@liang2022advances]. This approach
+simultaneously allows for the contribution of diverse media for
+annotation, labor needed to annotate them - although individual
+contributions are not incentivised for academics.
+
+A second similarly scalable approach for collaborative dataset creation
+that may better fit within academia, as it has the potential to produce
+credit in the form of publications, might be an adaptation of an
+academic publication format called the *Registered Report*
+[@chambers2013registered]. In a Registered Report, researchers submit a
+manuscript that includes information relevant to how the study will be
+conducted, including motivation of the work (i.e. introduction), details
+of data collection processes, as well as analyses. Typical review stages
+apply, i.e. suggestions for revisions or rejections, or the manuscript
+may receive an *in-principle acceptance*, whereby reviewers and editor
+agree to a publication should the methods used in the manuscript either
+follow closely the in-principle accepted version, or appropriate
+justifications be made for any changes that may have occurred. This
+format was designed to allow for editorial decisions being made based on
+the strength of the methods, which also are strengthened by a
+peer-review process prior to data collection.
+
+The Registered Report format is exceptionally well-suited to the
+collection of data intended for AI training and/or evaluation. Firstly,
+it allows for peer-review prior to collection, whereby a panel of
+experts will provide critiques that will either strengthen the eventual
+design, or reject it in favor of publishing other stronger designs.
+Given the scope and resources needed to collect AI datasets, this format
+may thus allow for a more public critique of the design prior to
+investment of resource cost of collection. Secondly, it further allows
+for the submissions of responses in the form of data that conforms to
+the design in the published manuscript in a decentralized fashion, from
+multiple stakeholders, thus reducing the bias from any single data
+collection point and allowing for the sharing of financial and other
+resource burdens. Thirdly, as online platforms like Zooniverse grow and
+proliferate to focus on different topics and domains, hosted projects
+may be attached to approved data collection protocols.
+
+A third approach integrates instruction with data collection by
+involving bachelor and masters students. the Collaborative Replications
+and Education Project (CREP) is a crowdsourced initiative where
+undergraduate students, under faculty supervision, replicate high-impact
+psychology studies, thus allowing for direct instruction of students
+while provided needed replications of pivotal studies [^23]. These
+replications are pre-registered, and may be published: for example, a
+meta-analysis of nine student-led replications of the "red-romance
+effect" found no significant effect [@wagge2019demonstration], and thus
+functioned both to instruct students and contribute to the scientific
+record. Similar approaches can be taken towards annotating data, with
+students replicating registered data collection protocols, or supplying
+the annotations themselves.
+
+[^23]: [Collaborative Replications and Education
+    Project](https://osf.io/wfc6u/)
+
+### Maintaining academic artifacts
+
+A number of publication formats currently exist that can assist in
+thoroughly summarizing and synthesizing evidence for topics in which
+there is sufficient volume of publications. *Systematic Reviews*[^24]
+and *Meta-Analyses*[^25] attempt to gather all relevant works on a
+topic, synthesize the evidence, extract insights and highlighting
+research opportunities on a given topic. In fields where there is an
+exceptional amount of work on a topic, or set of related topics,
+*Umbrella Reviews*[^26] attempt to synthesize collections of systematic
+reviews and/or meta-analyses on a given topic. While useful, the
+accuracy and currency of these formats atrophies in fields that are very
+rapidly developing. *Living Systematic Reviews* are useful for keeping
+up-to-date information visible, and are particularly useful in rapidly
+evolving fields [@elliott2017living]. Living Systematic Reviews use the
+same methods as any form of academic review (e.g. Systematic Reviews,
+Meta Analyses, etc.) for selecting, reviewing, and synthesizing
+available evidence, but include an *a-priori* commitment to gathering
+and updating what is reported. Although searching and selecting items
+for inclusion can be time consuming, they can be assisted with
+automation [@thomas2017living], for which many open-source, free tools
+are available (e.g. asreview[^27]).
+
+[^24]: https://en.wikipedia.org/wiki/Systematic_review
+
+[^25]: https://en.wikipedia.org/wiki/Meta-analysis
+
+[^26]: https://en.wikipedia.org/wiki/Umbrella_review
+
+[^27]: https://asreview.nl/
+
+The practice of science produces a number of artifacts beyond the paper
+that reports results of the work, including data, models, code /
+notebooks, configurations and lab notes. These artifacts are a relevant
+part of the work of science, although they are often obscured from view,
+and like software artifacts, would benefit from regular maintenance
+[@liem2023treat]. Notably, sites like the Open Science Framework[^28]
+have emerged that allow for the flexible documentation of various
+components of any scientific workflow as well as updates. Similarly,
+online git-compatible repositories like GitHub can be leveraged not only
+as containers for the artifacts, but as easily maintainable
+documentation of the evolution of various projects
+[@wattanakriengkrai2022github]. Taking these a step further, platforms
+like Quarto[^29] allow for directly reproducible documents to be
+extracted from code agnostic notebooks, thereby shrinking the distance
+between published papers and the working environment of scientists. With
+AI-related artifacts specifically, sites like Replicate[^30] and
+Huggingface[^31] have emerged that allow for hosting, documentation, and
+sharing of artifacts. Notably, all of these currently sit outside of
+academic peer review.
+
+[^28]: https://osf.io/
+
+[^29]: https://quarto.org/
+
+[^30]: https://replicate.com/
+
+[^31]: https://huggingface.co/
+
+Open Review allows for peer reviews of works, as well as a trail of the
+reviews.
+
+### AI Metrics should be a recognized (sub) field
 
 Data used for training and evaluation of models is of central
 importance. Solutions to problems in both training and evaluation data
@@ -512,98 +649,7 @@ most highly cited academic publication venues, nor is there a focused
 publication venue or conference. Thus, crucial topics remain
 under-resourced and under-researched.
 
-### Collaboration to address data requirement challenges
-
-The human labor responsible for the collection, curation, and eventual
-annotation of training data in addition to the training of the model
-(including researchers, engineers, and managers, but not data center
-employees and operations staff) is estimated at 29%-49% of the overall
-cost, which already amounts to tens of millions for frontier models
-[@cottier2024rising]. Thus, a key challenge to implementing better
-practices involves providing labor both in terms of the scientific work
-necessary to design data collection and annotation processes, but also
-to provide the annotations themselves.
-
-One approach to both gathering the necessary training data at scale as
-well as the labels or annotations have been shown in collaborations
-between scientists and the general public. Online platforms host and
-facilitate the creation of various resources, ranging from media and
-other forms of data, labels and annotation projects, as well as forums
-for discussion. For example inaturalist.org is an online community with
-over 8 million users who make contributions in the form of images taken
-on their smartphones, and/or labels of the species in the images
-[@van2018inaturalist]. Zooniverse.org is an online community of over
-2.8M users that hosts projects defined by scientists to gather labels
-from non-scientists [@fortson2012galaxy]. A third example is
-commonvoice.mozilla.org/en, which is a large dataset of speech
-transcription in 76 languages, provided by approximately 150k
-participants [@ardila-etal-2020-common]. People are willing to even
-share de-identified medical data as long as they are given agency over
-it [@liang2022advances]. This approach simultaneously allows for the
-contribution of diverse media for annotation, labor needed to annotate
-them.
-
-Another similarly scalable infrastructure for dataset creation within
-academia might be possible by adapting an academic publication format
-called the Registered Report [@chambers2013registered]. Initially
-designed to compensate for editorial decisions being made based on the
-results, rather than the quality of the methods. In many fields, aspects
-of the data collection design, as well as the design of analysis and
-prediction of results occur *a-priori*, in principle not to bias
-interpretation of results. In a Registered Report, researchers submit a
-manuscript that includes information relevant to how the study will be
-conducted, including motivation of the work (i.e. introduction), details
-of data collection processes, as well as analyses. Typical review stages
-apply, i.e. suggestions for revisions or rejections, or the manuscript
-may receive an *in-principle acceptance*, whereby reviewers and editor
-agree to a publication should the methods used in the manuscript either
-follow closely the in-principle accepted version, or appropriate
-justifications be made for any changes that may have occurred. Thus
-acceptance of publications is made based on the strength of the methods,
-which also are strengthened by a peer-review process prior to data
-collection.
-
-The Registered-Report format is exceptionally well-suited to the
-collection of datasets intended for AI training and/or evaluation.
-Firstly, they allow for peer-review prior to collection, whereby a panel
-of experts will provide critiques that will either strengthen the
-eventual design, or reject it in favor of publishing other stronger
-designs. Given the scope and resources needed to collect AI datasets,
-this format could be adapted such that it is published in its entirety
-prior to data collection. This may thus allow for a more public critique
-of the design prior to paying the resource cost of collection, and
-further allow for the submissions of responses in the form of data that
-conforms to the design in the published manuscript in a decentralized
-fashion, from multiple stakeholders, thus reducing the bias from any
-single data collection point and allowing for the sharing of financial
-and other resource burdens. As online platforms focused on different
-topics proliferate, they may be attached to approved data collection
-protocols.
-
-A further approach to contributing more scientific labor involves
-undergraduate bachelor and masters students. CREP is a crowdsourced
-initiative where undergraduate students, under faculty supervision,
-replicate high-impact psychology studies, thus allowing for direct
-instruction of students while provided needed replications of pivotal
-studies [^21]. These replications are pre-registered, and may be
-published. For instance, a meta-analysis of nine student-led
-replications of the "red-romance effect" found no significant effect
-[@wagge2019demonstration], thus functioning both to instruct students
-and contribute to the scientific record. Similar approaches can be taken
-towards annotating data, with students replicating registered data
-collection protocols, or supplying the annotations themselves.
-
-[^21]: [Collaborative Replications and Education
-    Project](CREP)(https://osf.io/wfc6u/)
-
-### Contemporary Approaches to Academic publication
-
-OSF.io and github have become repositories for materials. Open Review
-allows for peer reviews of works, as well as a trail of the reviews.
-
-Living systematic reviews are useful for rapidly evolving fields.
-Notably, works are appearing that aim to develop AI tools to assist in
-the writing of such reviews by assisting with screening \[\].
+Benchmarks and measurement
 
 ## Concluding Call to Action
 
