@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -305,9 +271,7 @@ div.csl-indent {
 </section>
 <section id="concluding-call-to-action" class="level2">
 <h2 class="anchored" data-anchor-id="concluding-call-to-action">Concluding Call to Action</h2>
-<p>Better data design enables better science, more responsible innovation, and safer, more meaningful AI systems, but is costly, even in comparison to the current amount of effort and funding dedicated to AI (and related fields) research. A key priority is that the AI/ML research community, conferences, funding agencies, and publishers must recognize data research, analysis as well as creation, as a research contribution. New formats like data-focused Registered Reports and micropublications should be adopted to 1) distribute efforts, and 2) aggregate knowledge.</p>
-<p>Further, we must rethink how we allocate labor.</p>
-<p>Load-bearing datasets require more effort than the initial collection and subsequent distribution, but also maintenance. This beyond research required to create useful datasets, we also require resources to maintain them.</p>
+<p>Better data design enables better science, more responsible innovation, and safer, more trustworthy AI systems. Substantial imperfections have been observed in the training and evaluation datasets often used to build AI systems. Despite this, the bulk of AI research incentives remain concentrated on models and algorithms, while the design, creation, and maintenance of training and evaluation data are treated as secondary, ad-hoc tasks. This must change. Researchers, academic departments, conference venues, and funding bodies must ostensibly recognize and credit the data work. And the data work must be expanded to include research on design prior to collection, definition of the complex attributes we wish the systems to have, and the validation of instruments to measure the complex phenomena in question. Crucially, we must rethink how scientific and annotation labor is structured if we are to meet the demands of trustworthy AI systems in the future. Dated practices must be modernized. New publication formats, as well as publication infrastructure must be developed, aimed at synthesis of the massive and increasing volume of academic publications, distribution of the burden of training and evaluation data design and creation, and collaboration with relevant stakeholders including the general public. This will require far greater thought and investment, even in comparison to the current amount of effort and funding dedicated to AI (and related fields) research. However, a number of promising directions have already emerged.</p>
 </section>
 <section id="sec-appendix" class="level1">
 <h1>Appendix</h1>
@@ -348,93 +312,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate midpoints for each bin</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>midpoints <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2500</span>, <span class="dv">3450</span>, <span class="dv">4450</span>, <span class="dv">5450</span>, <span class="dv">6450</span>, <span class="dv">7450</span>, <span class="dv">8450</span>, <span class="dv">9500</span>, <span class="dv">10500</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add midpoints to the dataframe</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>paper_lengths<span class="sc">$</span>Midpoint <span class="ot">&lt;-</span> midpoints</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate mean token count</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>mean_est <span class="ot">&lt;-</span> <span class="fu">sum</span>(paper_lengths<span class="sc">$</span>Midpoint <span class="sc">*</span> paper_lengths<span class="sc">$</span>Count) <span class="sc">/</span> <span class="fu">sum</span>(paper_lengths<span class="sc">$</span>Count)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate weighted variance</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>var_est <span class="ot">&lt;-</span> <span class="fu">sum</span>(paper_lengths<span class="sc">$</span>Count <span class="sc">*</span> (paper_lengths<span class="sc">$</span>Midpoint <span class="sc">-</span> mean_est)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">sum</span>(paper_lengths<span class="sc">$</span>Count)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Take square root to get standard deviation</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>sd_est <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var_est)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Print result</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>character(0)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"SD words: "</span>, sd_est))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "SD words:  1925.27260683454"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mean words: "</span>, mean_est))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Mean words:  6342.166344294"</code></pre>
-</div>
-</div>
-<p>https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them?utm_source=chatgpt.com According to Open AI, a token is 3/4 of a word</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sd_tokens <span class="ot">&lt;-</span> sd_est<span class="sc">*</span><span class="fl">1.25</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mean_tokens <span class="ot">&lt;-</span> mean_est<span class="sc">*</span><span class="fl">1.25</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"SD Tokens: "</span>, <span class="fu">round</span>(sd_tokens, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "SD Tokens:  2406.59"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Mean Tokens: "</span>, <span class="fu">round</span>(mean_tokens, <span class="dv">2</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Mean Tokens:  7927.71"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>( <span class="fu">round</span>(((mean_tokens<span class="sc">-</span>sd_tokens) <span class="sc">*</span> <span class="dv">4500000</span>) <span class="sc">/</span> <span class="dv">1000000000</span>, <span class="dv">2</span>), </span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="st">" Billion to"</span>, </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">round</span> (((mean_tokens<span class="sc">+</span>sd_tokens) <span class="sc">*</span> <span class="dv">4500000</span>) <span class="sc">/</span> <span class="dv">1000000000</span>, <span class="dv">2</span>), </span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="st">"Billion tokens per year from academia."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "24.85  Billion to 46.5 Billion tokens per year from academia."</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>( <span class="fl">4.8</span><span class="sc">*</span><span class="fl">1.25</span>, <span class="st">"Billion tokens from Wikipedia."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "6 Billion tokens from Wikipedia."</code></pre>
-</div>
-</div>
-<p>Wikipedia: https://en.wikipedia.org/wiki/Wikipedia%3ASize_of_Wikipedia?utm_source=chatgpt.com</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5000000000</span><span class="sc">/</span><span class="dv">2000000000000</span><span class="sc">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.25</code></pre>
-</div>
-</div>
-<p>Sci Hub: https://www.sci-hub.mk/ 88343822 documents as of 9 May 2025 13:47.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>(<span class="fl">7927.71</span> <span class="sc">*</span> <span class="dv">88343822</span>) <span class="sc">/</span> <span class="dv">1000000000</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 700.3642</code></pre>
-</div>
-</div>
-<p>https://www.theatlantic.com/technology/archive/2025/03/libgen-meta-openai/682093/ LibGen</p>
-<p>7.5 million books and 81 million research papers.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># at about 100k words per book</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">100000</span><span class="sc">*</span><span class="dv">7500000</span>) <span class="sc">/</span> <span class="dv">1000000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 750</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">100000</span><span class="sc">*</span><span class="dv">44000000</span>) <span class="sc">/</span> <span class="dv">1000000000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4400</code></pre>
-</div>
-</div>
-<p>Llama 2 was 2T tokens, Llama 3 was 15T. I didn’t really see where they got their data from. So I made some guesses.</p>
-<p>Looked at Wiki. The whole thing is like 5B.</p>
-<p>Sci-Hub, 88.3M papers, which at 8kish tokens is an upper boundary of 700B or so.</p>
-<p>7.5 million books on libgen you get about another 700B or so, at 100k-ish per words.</p>
-<p>Internet archive has some 44 <strong>million</strong> books. 4.4T.</p>
 
 
 
