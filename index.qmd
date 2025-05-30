@@ -600,8 +600,8 @@ reviewing, and synthesizing available evidence, but include an
 *a-priori* commitment to gather and update what is reported for a given
 length of time. Although searching and selecting items for inclusion can
 be time consuming, they can be assisted with automation
-[@thomas2017living], for which many open-source, free tools are
-available (e.g. asreview[^29]).
+[@thomas2017living; @schmidt2025data], for which many open-source, free tools are
+available (e.g. asreview[^29]). And thus, machine learning tools can contribute to the rapid synthesis of quickly evolving scientific evidence. 
 
 [^26]: https://en.wikipedia.org/wiki/Systematic_review
 
@@ -619,12 +619,12 @@ and like software artifacts, would benefit from regular maintenance
 [@liem2023treat]. With AI-related artifacts specifically, sites like
 Replicate[^30] and Huggingface[^31] have emerged that allow for hosting,
 documentation, and sharing of artifacts. Sites like the Open Science
-Framework[^32] have emerged that allow for the flexible documentation of
-various components of any scientific workflow as well as updates, for
-academia specifically. Similarly, online git-compatible repositories
-like GitHub can be leveraged not only as containers for the artifacts,
-but as easily maintainable documentation of the evolution of various
-projects [@wattanakriengkrai2022github].
+Framework[^32] have emerged that allow for the flexible
+documentation of various components of any scientific workflow as well
+as updates. Similarly, online git-compatible
+repositories like GitHub can be leveraged not only as containers for the
+artifacts, but as easily maintainable documentation of the evolution of
+various projects [@wattanakriengkrai2022github]. Taken together, these technologies allow for creation, versioning, and maintenance of artifacts of a research project similar to software artifacts -  *Living Scientific Artifacts*. 
 
 [^30]: https://replicate.com/
 
@@ -632,12 +632,17 @@ projects [@wattanakriengkrai2022github].
 
 [^32]: https://osf.io/
 
-Taking these a step further, platforms like Quarto[^33] allow for
-directly reproducible documents to be extracted from code agnostic
-notebooks, thereby shrinking the distance between published papers and
-the working environment of scientists.
+Research output in the form of manuscripts, and artifacts resulting from research projects can directly be combined for publication. Platforms like Quarto[^33] and Jupyter[^34] allow for the creation reproducible documents, which combine text and text formatting, with the output of code snippets, media, and visualizations. Thus the papers that we read could be rendered from documents that also contain all the code and artifacts from which results are derived. These documents can then directly be published, along with the underlying artifacts on platforms like f1000[^35] and ResearchEquals[^36], and platforms like ResearchHub[^37] connect publication directly to a github-like repository that hosts the artifacts. Taken together, this suggests the potential to shrink the distance between published papers and the working environment of scientists.
 
 [^33]: https://quarto.org/
+
+[^34]: https://jupyter.org/
+
+[^35]: https://f1000research.com/
+
+[^36]: https://www.researchequals.com/
+
+[^37]: https://www.researchhub.com/about
 
 Open Review allows for peer reviews of works, as well as a trail of the
 reviews.
