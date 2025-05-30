@@ -493,45 +493,50 @@ data collection.
 
 ## A contemporary field
 
-### Collaboration to address data and annotation challenges
+Research on AI and related fields will require contemporary solutions to
+address problems related to training and evaluation data, and scientific
+and annotation labor. Although no clear solutions have been derived,
+some promising directions have been observed in recent years.
+
+### Collaborative-platform data collection
 
 One approach to both gathering the necessary training data at scale as
 well as the labels or annotations have been shown in collaborations
 between scientists and the general public. Online platforms, often
 initiated by academics, host and facilitate the creation of various
 resources, ranging from media and other forms of data, labels and
-annotation projects as well as forums for discussion. For example
-inaturalist.org is an online community with over 8 million users who
-make contributions in the form of images taken on their smartphones,
-and/or labels of the species in the images [@van2018inaturalist].
-Zooniverse.org is an online community of over 2.8M users that hosts
-projects defined by scientists to gather labels from non-scientists
-[@fortson2012galaxy]. A third example is commonvoice.mozilla.org/en,
-which is a large dataset of speech transcription in 76 languages,
-provided by approximately 150k participants [@ardila-etal-2020-common].
-Of note, it has been shown that people are willing to even share
-de-identified medical data as long as they are given sufficient
-transparency and agency over its use [@liang2022advances]. This approach
-simultaneously allows for the contribution of diverse media for
-annotation, labor needed to annotate them - although individual
-contributions are not incentivised for academics.
+annotation projects as well as forums for discussion. Of note, it has
+been shown that people are willing to even share de-identified medical
+data as long as they are given sufficient transparency and agency over
+its use [@liang2022advances]. For example iNaturalist.org is an online
+community with over 8 million users who make contributions in the form
+of images taken on their smartphones, and/or labels of the species in
+the images [@van2018inaturalist]. Zooniverse.org is an online community
+of over 2.8M users that hosts projects defined by scientists to gather
+labels from non-scientists [@fortson2012galaxy]. A third example is
+Commonvoice, which is a large dataset of speech transcription in 76
+languages, provided by approximately 150k participants
+[@ardila-etal-2020-common]. Immediate challenges related to privacy must
+be solved, however this approach does simultaneously allow for the
+contribution of diverse media for annotation, and labor needed to
+annotate them.
 
-A second similarly scalable approach for collaborative dataset creation
-that may better fit within academia, as it has the potential to produce
-credit in the form of publications, might be an adaptation of an
-academic publication format called the *Registered Report*
-[@chambers2013registered]. In a Registered Report, researchers submit a
-manuscript that includes information relevant to how the study will be
-conducted, including motivation of the work (i.e. introduction), details
-of data collection processes, as well as analyses. Typical review stages
-apply, i.e. suggestions for revisions or rejections, or the manuscript
-may receive an *in-principle acceptance*, whereby reviewers and editor
-agree to a publication should the methods used in the manuscript either
-follow closely the in-principle accepted version, or appropriate
-justifications be made for any changes that may have occurred. This
-format was designed to allow for editorial decisions being made based on
-the strength of the methods, which also are strengthened by a
-peer-review process prior to data collection.
+A means to further encourage collaborative data collection, that also
+allows for peer-review feedback prior to the collection, and that sits
+more closely within academia is the *Registered Report*
+[@chambers2013registered]: an academic publication format where
+researchers submit a manuscript prior to data collection, which includes
+all information relevant to how the study will be conducted, including
+motivation of the work (i.e. introduction), details of data collection
+processes, as well as planned analyses. Typical review stages apply,
+i.e. suggestions for revisions or rejections, or an *in-principle
+acceptance*, whereby reviewers and editor agree to a publication should
+the methods used in the manuscript either follow closely the
+in-principle accepted version, or appropriate justifications be made for
+any changes made. This format was designed to allow for editorial
+decisions being made based on the strength of the methods, without the
+influence of the results, and to also strengthened the methods via
+peer-review prior to data collection.
 
 The Registered Report format is exceptionally well-suited to the
 collection of data intended for AI training and/or evaluation. Firstly,
@@ -547,88 +552,97 @@ multiple stakeholders, thus reducing the bias from any single data
 collection point and allowing for the sharing of financial and other
 resource burdens. Thirdly, as online platforms like Zooniverse grow and
 proliferate to focus on different topics and domains, hosted projects
-may be attached to approved data collection protocols.
+may be attached to approved data collection protocols. And lastly,
+platforms allow for further insight from input via the community of
+users. This could facilitate discovery, as was the case when a platform
+user discovered a new astronomical object - now named 'Hanny's
+Voorwerp[^23]' after her - while classifying galaxies on a platform
+called Galaxy Zoo[^24].
+
+[^23]: https://daily.zooniverse.org/2013/09/24/hannys-voorwerp/
+
+[^24]: https://www.zooniverse.org/projects/zookeeper/galaxy-zoo/
 
 A third approach integrates instruction with data collection by
-involving bachelor and masters students. the Collaborative Replications
-and Education Project (CREP) is a crowdsourced initiative where
-undergraduate students, under faculty supervision, replicate high-impact
-psychology studies, thus allowing for direct instruction of students
-while provided needed replications of pivotal studies [^23]. These
-replications are pre-registered, and may be published: for example, a
-meta-analysis of nine student-led replications of the "red-romance
-effect" found no significant effect [@wagge2019demonstration], and thus
-functioned both to instruct students and contribute to the scientific
-record. Similar approaches can be taken towards annotating data, with
-students replicating registered data collection protocols, or supplying
-the annotations themselves.
+involving bachelor and masters students. The Collaborative Replications
+and Education Project (CREP) is an initiative where undergraduate
+students, under faculty supervision, replicate high-impact psychology
+studies. The aim is to allow for direct instruction of students while
+provided needed replications of pivotal studies[^25]. One example output
+is a meta-analysis of nine student-led replications which showed a lack
+of evidence of the "red- [@wagge2019demonstration], which functioned
+both to instruct students and contribute to the scientific record.
+Similar approaches can be taken towards annotating data with students
+replicating registered data collection protocols, or supplying the
+annotations themselves. This may result in an increase in quality of
+annotations over crowd-sourcing platforms like mTurk.
 
-[^23]: [Collaborative Replications and Education
+[^25]: [Collaborative Replications and Education
     Project](https://osf.io/wfc6u/)
 
-### Maintaining academic artifacts
+### Publication and Maintenance of academic artifacts
 
 A number of publication formats currently exist that can assist in
 thoroughly summarizing and synthesizing evidence for topics in which
-there is sufficient volume of publications. *Systematic Reviews*[^24]
-and *Meta-Analyses*[^25] attempt to gather all relevant works on a
-topic, synthesize the evidence, extract insights and highlighting
-research opportunities on a given topic. In fields where there is an
-exceptional amount of work on a topic, or set of related topics,
-*Umbrella Reviews*[^26] attempt to synthesize collections of systematic
-reviews and/or meta-analyses on a given topic. While useful, the
-accuracy and currency of these formats atrophies in fields that are very
-rapidly developing. *Living Systematic Reviews* are useful for keeping
-up-to-date information visible, and are particularly useful in rapidly
-evolving fields [@elliott2017living]. Living Systematic Reviews use the
-same methods as any form of academic review (e.g. Systematic Reviews,
-Meta Analyses, etc.) for selecting, reviewing, and synthesizing
-available evidence, but include an *a-priori* commitment to gathering
-and updating what is reported. Although searching and selecting items
-for inclusion can be time consuming, they can be assisted with
-automation [@thomas2017living], for which many open-source, free tools
-are available (e.g. asreview[^27]).
+there is sufficient volume of publications. *Systematic Reviews*[^26]
+and *Meta-Analyses*[^27] attempt to gather all relevant works on a
+topic, synthesize the evidence, extract insights and highligh research
+opportunities on a given topic. In fields where there is an exceptional
+amount of work on a topic, or set of related topics, *Umbrella
+Reviews*[^28] attempt to synthesize collections of systematic reviews
+and/or meta-analyses. While useful, the accuracy and currency of these
+formats atrophies in fields that are very rapidly developing. *Living
+Systematic Reviews* are useful for keeping up-to-date information
+visible, particularly in rapidly evolving fields [@elliott2017living].
+Living Systematic Reviews use the same methods as any form of academic
+review (e.g. Systematic Reviews, Meta Analyses, etc.) for selecting,
+reviewing, and synthesizing available evidence, but include an
+*a-priori* commitment to gather and update what is reported for a given
+length of time. Although searching and selecting items for inclusion can
+be time consuming, they can be assisted with automation
+[@thomas2017living], for which many open-source, free tools are
+available (e.g. asreview[^29]).
 
-[^24]: https://en.wikipedia.org/wiki/Systematic_review
+[^26]: https://en.wikipedia.org/wiki/Systematic_review
 
-[^25]: https://en.wikipedia.org/wiki/Meta-analysis
+[^27]: https://en.wikipedia.org/wiki/Meta-analysis
 
-[^26]: https://en.wikipedia.org/wiki/Umbrella_review
+[^28]: https://en.wikipedia.org/wiki/Umbrella_review
 
-[^27]: https://asreview.nl/
+[^29]: https://asreview.nl/
 
 The practice of science produces a number of artifacts beyond the paper
 that reports results of the work, including data, models, code /
 notebooks, configurations and lab notes. These artifacts are a relevant
 part of the work of science, although they are often obscured from view,
 and like software artifacts, would benefit from regular maintenance
-[@liem2023treat]. Notably, sites like the Open Science Framework[^28]
-have emerged that allow for the flexible documentation of various
-components of any scientific workflow as well as updates. Similarly,
-online git-compatible repositories like GitHub can be leveraged not only
-as containers for the artifacts, but as easily maintainable
-documentation of the evolution of various projects
-[@wattanakriengkrai2022github]. Taking these a step further, platforms
-like Quarto[^29] allow for directly reproducible documents to be
-extracted from code agnostic notebooks, thereby shrinking the distance
-between published papers and the working environment of scientists. With
-AI-related artifacts specifically, sites like Replicate[^30] and
-Huggingface[^31] have emerged that allow for hosting, documentation, and
-sharing of artifacts. Notably, all of these currently sit outside of
-academic peer review.
-
-[^28]: https://osf.io/
-
-[^29]: https://quarto.org/
+[@liem2023treat]. With AI-related artifacts specifically, sites like
+Replicate[^30] and Huggingface[^31] have emerged that allow for hosting,
+documentation, and sharing of artifacts. Sites like the Open Science
+Framework[^32] have emerged that allow for the flexible documentation of
+various components of any scientific workflow as well as updates, for
+academia specifically. Similarly, online git-compatible repositories
+like GitHub can be leveraged not only as containers for the artifacts,
+but as easily maintainable documentation of the evolution of various
+projects [@wattanakriengkrai2022github].
 
 [^30]: https://replicate.com/
 
 [^31]: https://huggingface.co/
 
+[^32]: https://osf.io/
+
+Taking these a step further, platforms like Quarto[^33] allow for
+directly reproducible documents to be extracted from code agnostic
+notebooks, thereby shrinking the distance between published papers and
+the working environment of scientists.
+
+[^33]: https://quarto.org/
+
 Open Review allows for peer reviews of works, as well as a trail of the
 reviews.
 
-### AI Metrics should be a recognized (sub) field
+### AI Metrics as a field
 
 Data used for training and evaluation of models is of central
 importance. Solutions to problems in both training and evaluation data
