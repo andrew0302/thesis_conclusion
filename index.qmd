@@ -19,15 +19,16 @@ resources in the AI research field to meet these needs.
 
 The future quality of AI systems will be shaped by the data, evaluation,
 and reporting practices we establish today. AI systems are a product of
-the data used to train and evaluate them, thus we indirectly shape their
-behavior by the processes we design to collect training and evaluation
-data [@hullman2022worst]. Training and evaluation data have ongoing
-effects as they are often re-used [@geiger2021garbage], likely because
-of their high cost. Data professionals spend more time on data
-preparation and cleansing than they do on model selection, training and
-deployment [^1] [^2] [^3], and yet the focus remains on the latter
-[@birhane2022values] with data professionals indicating that they prefer
-the 'model work' over the 'data work' [@sambasivan2021everyone].
+the data sets used to train and evaluate them, thus we indirectly shape
+their behavior by the processes we design to collect training and
+evaluation data [@hullman2022worst]. Training and evaluation data have
+ongoing effects on AI and related fields as they are often re-used
+[@geiger2021garbage], likely because of their high cost. Altough data
+professionals spend more time on data preparation and cleansing than
+they do on model selection, training and deployment [^1] [^2] [^3], the
+focus remains on the latter [@birhane2022values], possibly by preference
+as data professionals indicate they prefer the 'model work' over the
+'data work' [@sambasivan2021everyone].
 
 [^1]: Anaconda data science report 2022:
     https://www.anaconda.com/resources/whitepaper/state-of-data-science-report-2022
@@ -55,8 +56,8 @@ accounting for the full range of reasonable interpretations in terms of
 annotations [@cabitza2023toward], and completeness in reporting of the
 annotation process [@geiger2021garbage; @daneshjou2021lack]. Evidence
 points to a need for a more sophisticated approach to the design of
-datasets in AI fields, especially frequently re-used benchmarks that
-become 'load-bearing' cornerstones in their niches.
+datasets in AI and related fields, especially frequently re-used
+benchmarks that become 'load-bearing' cornerstones in their niches.
 
 Although improvements to data collection processes have been proposed,
 they are at best slowly being adopted, and at worst being largely
@@ -67,7 +68,7 @@ also in terms of the labor required to curate the data
 required to train systems using the most advanced methods
 [@villalobos2024position], and increasingly sophisticated qualities we
 aim to evaluate systems on, that in turn are challenging to define and
-measure e.g. fairness [@jacobs2021measurement], and intelligence
+measure - e.g. fairness [@jacobs2021measurement], and intelligence
 [@gignac2024defining]. Furthermore, as many systems aim to behave
 similar to humans, the human-like behavior of the sophisticated systems
 we are evaluating are a prime target for anthropomorphistically biased
@@ -230,19 +231,24 @@ data labeling as well, however implementations of such practices are
 also costly. The field of *AI metrics* distinguishes between a)
 observable AI system behavior, and b) the targets of measurement. In
 other words, a given score on a given 'AI' benchmark designed to measure
-'intelligence' is not itself a direct measure of 'intelligence'. AI
-metrics treats the indirectly observable phenomena as *computational
-constructs* - indirectly observable aspects of AI system behavior, a
-parallel to *constructs* in other fields - indirectly observable
-phenomena [@gignac2024defining]. Thus the benchmark itself is a
-measurement instrument, aimed at measuring a specific aspect of the AI
-system.
+'intelligence' is not itself a direct measure of 'intelligence'. The
+field of AI metrics treats the indirectly observable phenomena as
+*computational constructs* - indirectly observable aspects of AI system
+behavior, a parallel to *constructs* in other fields - e.g. energy, an
+unobservable property of all matter and systems from the field of
+physics, chemical bonds, the unobservable property that holds molecules
+together from the field of chemistry, and fitness, an organisms ability
+to survive, reproduce and thrive in a given environmen
+[@gignac2024defining]. Thus the benchmark itself is a measurement
+instrument, aimed at measuring a computational construct, typically the
+accuracy of an AI system.
 
 The process that gives rise to the labels in the data that, which
 include the annotation interface and task instructions shown to
-annotators, is also a measurement instrument [@beck2022improving]. The
-case study in this thesis contributes to the field of AI metrics by
-proposing enriching design, collection, analysis, and reporting of
+annotators, is also a measurement instrument - in this case, one that
+produces the 'ground truth' itself [@beck2022improving]. The case study
+in this thesis contributes to the field of AI metrics by proposing
+enriching design, collection, analysis, and reporting of
 training/evaluation data for AI systems, using knowledge from the social
 sciences [@beck2022improving, @jacobs2021measurement], metrology
 (measurement science) [@welty2019metrology], and work in the
@@ -250,43 +256,43 @@ computational sciences on 'ground-truthing' [@cabitza2023toward]. It
 requires a higher cost in terms of scientific labor, as it includes an
 *a-priori* empirical investigation of the data collection process in
 addition to the data collection process itself. In other words, it
-requires research on *how to collect the data*. Applying the knowledge
-to other tasks would require similar research, in principle for every
-combination of *construct* (i.e. the latent phenomenon of interest being
-measured), *content* (e.g. text, video, audio etc. and in some cases
-also subgroups, e.g. tweets vs. podcast transcripts vs. formal speeches
+requires research on *how* to collect the data in order to produce
+sufficiently accurate measurements. Applying the knowledge to other
+tasks would require similar research, in principle for every combination
+of *construct* (i.e. the latent phenomenon of interest being measured),
+*content* (e.g. text, video, audio etc. and in some cases also
+subgroups, e.g. tweets vs. podcast transcripts vs. formal speeches
 etc.), and for relevant *characteristics* of annotators (i.e. ethnicity,
-political affiliation, etc.). These costs are in addition to the
-annotation labor.
+political affiliation, etc.).
 
 Although it is clear there is substantial room for improvement along
 with the repercussive benefits from such improvements, they will require
 resources. Despite growing recognition of evaluation data problems
 [@hullman2022worst], which in turn have the potential to lead to harms
 [@mehrabi2021survey], actual progress toward better annotation data
-practices, from collection, to analysis, to reporting remains slow.
+practices, from collection, to analysis, to reporting, remains slow.
 Current incentives prioritize immediately observable proxies for
 accuracy [@birhane2022values] rather than careful measurement design
 [@beck2022improving] or long-term dataset stewardship [@liem2023treat].
 Beyond the challenge of gathering data at the necessary scale, are
 issues about the quality of the data itself, specifically the quality of
-the overall process that created the data. This challenge is essentially
-one of measurement [@welty2019metrology].
+the overall process that created the data.
 
-Datasets for evaluation very often contain human input
-[@geiger2020garbage; @geiger2021garbage; @daneshjou2021lack;
-@sav2023annotation]. When collecting annotations, labels, or other forms
-of input from people in order to construct training/evaluation datasets,
-we are attempting to collect measurements of latent, unobservable
-*constructs* [@jacobs2021measurement; @gignac2024defining]. In other
-words, when we examine data created from the observations of multiple
-people in aggregate, we do not directly observe e.g. the presence or
-absence of an object in a digital image; rather we observe the
-probability that a person from a given population will indicate the
-presence of absence of the object in the image [@welty2019metrology]. In
-the parlance of psychology, one cannot directly observe an other's
-intelligence as one might observe an other's height
-[@gignac2024defining]. And even though height is observable, our
+The challenge is essentially one of measurement [@welty2019metrology]
+specifically of human responses, as datasets for evaluation very often
+contain human input [@geiger2020garbage; @geiger2021garbage;
+@daneshjou2021lack; @sav2023annotation]. When collecting annotations,
+labels, or other forms of input from people in order to construct
+training/evaluation datasets, we are attempting to collect measurements
+of latent, unobservable *constructs* [@jacobs2021measurement;
+@gignac2024defining]. In other words, when we examine data created from
+the observations of multiple people in aggregate, we do not directly
+observe e.g. the presence or absence of an object in a digital image;
+rather we observe the probability that a person from a given population
+will indicate the presence of absence of the object in the image
+[@welty2019metrology]. In the parlance of psychology, one cannot
+directly observe an other's intelligence as one might observe an other's
+height [@gignac2024defining]. And even though height is observable, our
 measurements of it are still imperfect: in using a measurement device
 like a ruler multiple times, should we measure precisely enough, we
 would observe variance in each measurement with the true score for
@@ -331,19 +337,18 @@ instruments for, but also to define.
 Addressing the aforementioned data challenges will require substantial
 additional efforts. The human labor responsible for the collection,
 curation, and eventual annotation of training data in addition to the
-training of models (including researchers, engineers, and managers, but
-not data center employees and operations staff) is estimated at 29%-49%
-of the overall cost, which already amounts to tens of millions for
-frontier models [@cottier2024rising]. Thus, a key challenge to
-implementing better practices involves providing labor both in terms of
+training of models is estimated at 29%-49% of the overall cost
+(estimates include researchers, engineers, and managers, but not data
+center employees and operations staff), which already amounts to tens of
+millions for frontier models [@cottier2024rising]. Thus, a key challenge
+to implementing better practices involves providing labor in terms of
 the scientific work necessary to design data collection and annotation
-processes, but also to provide the annotations themselves. However our
-current knowledge gathering apparatus - science as it is now practiced
-and reported - is dated, and inefficient. Thus, a substantial amount of
-the labor will likely have to come from an already overburdened work
-force. A re-consideration of what duties comprise academic work is thus
-warranted, specifically those that contribute to the body of human
-knowledge, and whether they can be modernized.
+processes. However our current knowledge gathering apparatus - science
+as it is now practiced and reported - is dated, and inefficient. Thus, a
+substantial amount of the labor will likely have to come from an already
+overburdened work force. A re-consideration of what duties comprise
+academic work is thus warranted, specifically those that contribute to
+the body of human knowledge, and whether they can be modernized.
 
 One key example involves academic writing and publication, specifically
 a primary source of scientific labor in academic settings, the PhD
@@ -369,42 +374,42 @@ defended, evidence has shown that PhD candidates with fixed duration
 contracts are exceeding that duration by several months, resorting to
 completing their thesis on their own time and risking failing at
 completion [@van2013took]. Though a key ceremonial moment, a thesis
-defense is substantially less rigorous than a publication: it is
-curated, as the 'peer reviewers' are chosen by the supervisors of the
-student - in the 'real world' of academia, on the other hand, peer
-reviewers are selected from far broader networks than those of the PhD
-candidate's supervisory staff [@lariviere2012shoulders]. It is thus not
-surprising that publications, and not theses, remain the key factor in
-the assessment of the value of Academics as scientists
-[@anderson2022effect]. Although more and more thesis content is being
-comprised of academic publications anyway (i.e. *thesis by publication*,
-@jackson2013completing), the substantial labor required to assemble
-works into a single document, write additional (introductory /
-conclusiory) chapters that are themselves complete manuscripts or nearly
-so, then help organize a formal event for the defense take away from
-more meaningful labor that this workforce could provide.
+defense is substantially less rigorous than a peer review for a
+publication: it is curated, as the 'peer reviewers' are chosen by the
+supervisors of the student, where in the 'real world' of academia, peer
+reviewers are selected from far broader networks
+[@lariviere2012shoulders]. It is thus not surprising that publications,
+and not theses, remain the key factor in the assessment of the value of
+Academics as scientists [@anderson2022effect]. Although more and more
+thesis content is being comprised of academic publications anyway (i.e.
+*thesis by publication*, @jackson2013completing), the substantial labor
+required to assemble works into a single document, write additional
+(introductory / conclusiory) chapters that are themselves complete
+manuscripts or nearly so, organize its printing into paperback books,
+organize a formal event for the defense etc. takes away from more
+meaningful labor that this workforce could provide.
 
 A second key example involves a cornerstone of trust in science: the
 editorial peer-review process dates back several hundred years, and
 exists as a means to encourage and maintain the quality of scholarly
 work [@kelly2014peer]. Early career and experienced researchers alike
-contribute to peer-review[^12], labor conservatively valued at over 1.5B
-USD in 2020 [@aczel2021billion]. ECRs perform a substantial amount of
-the work often without credit[^13], and in some cases perform the work
-completely on their own [@mcdowell2019co], especially in high-volume
-conferences like NeurIPS [@shah2018design]. This is a crucial note, as
-the submissions to high-volume conferences show massive increases year
-over year[^14] and struggle to meet the review requirements: e.g.
-NeurIPS 2021 required outreach to recruit over 1k additional
-peer-reviewers beyond the over 7k initial volunteers, to produce the 31k
-reviews needed for the conference[^15]. As conferences continue to grow,
-the amount of review work is being divided among a regularly stable
-labor pool, reducing the attention paid to each individual work, a
-problem exacerbated by the repeat submission of borderline papers - i.e.
-papers that were nearly accepted [@Zhang_2022]. This results in
-important flaws being missed: e.g. [@kapoor2023leakage] show a growing
-crisis across 17 Machine Learning fields from a lack of trustworthy
-results due to data leakage.
+contribute to peer-review[^12], a massive amount of collective labor
+conservatively valued at over 1.5B USD in 2020 [@aczel2021billion]. ECRs
+perform a substantial amount of the work often without credit[^13], and
+in some cases perform the work completely on their own
+[@mcdowell2019co], especially in high-volume conferences like NeurIPS
+[@shah2018design]. This is a crucial note, as the submissions to
+high-volume conferences show massive increases year over year[^14] and
+struggle to meet the review requirements: e.g. NeurIPS 2021 required
+outreach to recruit over 1k additional peer-reviewers beyond the over 7k
+initial volunteers, to produce the 31k reviews needed for the
+conference[^15]. As conferences continue to grow, the amount of review
+work is being divided among a regularly stable labor pool, reducing the
+attention paid to each individual work, a problem exacerbated by the
+repeat submission of borderline papers - i.e. papers that were nearly
+accepted [@Zhang_2022]. This results in important flaws being missed:
+e.g. [@kapoor2023leakage] show a growing crisis across 17 Machine
+Learning fields from a lack of trustworthy results due to data leakage.
 
 [^12]: https://www.elsevier.com/connect/more-early-career-researchers-are-stepping-up-to-peer-review
 
@@ -460,7 +465,7 @@ a San Francisco-based firm that sourced annotation labor from Kenya,
 Uganda, and India to provide the human inputs necessary to fine tune
 their models [^21]. Despite the pay rate of 2 USD per hour being far
 less than the 7.25 USD federal minimum wage in the US[^22], OpenAI spent
-600K USD in 2021 to label text as being violent, sexual, or hatespeech
+600K USD in 2021 to label text as being violent, sexual, or hate speech
 alone. While the availability of such services has allowed for rapid
 gathering of evaluation data for AI-related projects, works that
 highlight data scarcity warn that it may be insufficient to meet the
@@ -506,14 +511,15 @@ between scientists and the general public. Online platforms, often
 initiated by academics, host and facilitate the creation of various
 resources, ranging from media and other forms of data, labels and
 annotation projects as well as forums for discussion. Of note, it has
-been shown that people are willing to even share de-identified medical
-data as long as they are given sufficient transparency and agency over
-its use [@liang2022advances]. For example iNaturalist.org is an online
-community with over 8 million users who make contributions in the form
-of images taken on their smartphones, and/or labels of the species in
-the images [@van2018inaturalist]. Zooniverse.org is an online community
-of over 2.8M users that hosts projects defined by scientists to gather
-labels from non-scientists [@fortson2012galaxy]. A third example is
+been shown that people are even willing to share data as sensitive as
+medical data as long as it de-identified, and they are given sufficient
+transparency and agency over its use and/or removal
+[@liang2022advances]. For example iNaturalist.org is an online community
+with over 8 million users who make contributions in the form of images
+taken on their smartphones, and/or labels of the species in the images
+[@van2018inaturalist]. Zooniverse.org is an online community of over
+2.8M users that hosts projects defined by scientists to gather labels
+from non-scientists [@fortson2012galaxy]. A third example is
 Commonvoice, which is a large dataset of speech transcription in 76
 languages, provided by approximately 150k participants
 [@ardila-etal-2020-common]. Immediate challenges related to privacy must
@@ -538,25 +544,26 @@ decisions being made based on the strength of the methods, without the
 influence of the results, and to also strengthened the methods via
 peer-review prior to data collection.
 
-The Registered Report format is exceptionally well-suited to the
-collection of data intended for AI training and/or evaluation. Firstly,
-it allows for peer-review prior to collection, whereby a panel of
-experts will provide critiques that will either strengthen the eventual
-design, or reject it in favor of publishing other stronger designs.
-Given the scope and resources needed to collect AI datasets, this format
-may thus allow for a more public critique of the design prior to
-investment of resource cost of collection. Secondly, it further allows
-for the submissions of responses in the form of data that conforms to
-the design in the published manuscript in a decentralized fashion, from
-multiple stakeholders, thus reducing the bias from any single data
-collection point and allowing for the sharing of financial and other
-resource burdens. Thirdly, as online platforms like Zooniverse grow and
-proliferate to focus on different topics and domains, hosted projects
-may be attached to approved data collection protocols. And lastly,
-platforms allow for further insight from input via the community of
-users. This could facilitate discovery, as was the case when a platform
-user discovered a new astronomical object - now named 'Hanny's
-Voorwerp[^23]' after her - while classifying galaxies on a platform
+The Registered Report format may prove useful as a means for
+collaborative collection of data intended for AI training and/or
+evaluation. Firstly, it allows for peer-review prior to collection,
+whereby a panel of experts will provide critiques that will either
+strengthen the eventual design, or reject it in favor of publishing
+other stronger designs. Given the scope and resources needed to collect
+AI datasets, this format may thus allow for a more public critique of
+the design prior to investment of resource cost of collection. Secondly,
+it further allows for the submissions of responses in the form of data
+that conforms to the design in the published manuscript in a
+decentralized fashion, from multiple stakeholders, thus reducing the
+bias from any single data collection point and allowing for the sharing
+of financial and other resource burdens. Thirdly, as online platforms
+like Zooniverse grow and proliferate to focus on different topics and
+domains, hosted projects may be attached to approved data collection
+protocols. Thus infrastructure may be shared. And lastly, platforms
+allow for further insight from input via the community of users. This
+could facilitate discovery, as was the case when a platform user
+discovered a new type of astronomical object - now named 'Hanny's
+Voorwerp'[^23] after her - while classifying galaxies on a platform
 called Galaxy Zoo[^24].
 
 [^23]: https://daily.zooniverse.org/2013/09/24/hannys-voorwerp/
@@ -598,13 +605,14 @@ visible, particularly in rapidly evolving fields [@elliott2017living].
 Living Systematic Reviews use the same methods as any form of academic
 review (e.g. Systematic Reviews, Meta Analyses, etc.) for selecting,
 reviewing, and synthesizing available evidence, but include an
-*a-priori* commitment to gather and update what is reported for a given
-length of time. Although searching and selecting items for inclusion can
-be time consuming, they can be assisted with automation
+*a-priori* commitment to gather and update what is reported, often for a
+given length of time. Although searching and selecting items for
+inclusion can be time consuming, they can be assisted with automation
 [@thomas2017living; @schmidt2025data], for which many open-source, free
 tools are available (e.g. asreview[^29]). Thus, machine learning tools
 can contribute to the rapid synthesis of quickly evolving scientific
-evidence.
+evidence, as is the case with rapidly developing fields, like Large
+Language Models.
 
 [^26]: https://en.wikipedia.org/wiki/Systematic_review
 
@@ -615,22 +623,22 @@ evidence.
 [^29]: https://asreview.nl/
 
 The practice of AI and related science produces a number of artifacts
-beyond manuscript that reports results of the work, including data,
+beyond the manuscript that reports results of the work, including data,
 models, code / notebooks, configurations and lab notes. These artifacts
 are a relevant part of the work of science, although they are often
 obscured from view, and like software artifacts, would benefit from
-regular maintenance [@liem2023treat]. With AI-related artifacts
-specifically, sites like Replicate[^30] and Huggingface[^31] have
-emerged that allow for hosting, documentation, sharing and discussion.
-More widely used in other fields, sites like the Open Science
-Framework[^32] have emerged that allow for the flexible documentation of
-various components of any scientific workflow as well as updates.
-Similarly, online git-compatible repositories like GitHub can be
-leveraged not only as containers for the artifacts, but as easily
+regular maintenance [@liem2023treat; @bartlett2025raiders]. With
+AI-related artifacts specifically, sites like Replicate[^30] and
+Huggingface[^31] have emerged that allow for hosting, documentation,
+sharing and discussion. More widely used in other fields, sites like the
+Open Science Framework[^32] have emerged that allow for the flexible
+documentation of various components of any scientific workflow as well
+as updates. Similarly, online git-compatible repositories like GitHub
+can be leveraged not only as containers for the artifacts, but as easily
 maintainable documentation of the evolution of various projects
 [@wattanakriengkrai2022github]. Taken together, these technologies allow
 for creation, versioning, and maintenance of artifacts of a research
-project similar to software artifacts - *Living Scientific Artifacts*. 
+project similar to software artifacts - *Living Scientific Artifacts*.
 
 [^30]: https://replicate.com/
 
@@ -638,18 +646,27 @@ project similar to software artifacts - *Living Scientific Artifacts*.
 
 [^32]: https://osf.io/
 
-Artifact-inclusive publication is also possible, though not yet widely
-established. Research output in the form of manuscripts, and artifacts
-resulting from research projects can directly be combined for
-publication. Platforms like Quarto[^33] and Jupyter[^34] allow for the
-creation reproducible documents, which combine text and text formatting,
-with the output of code snippets, media, and visualizations. Thus the
-papers that we read could be rendered from documents that also contain
-all the code and artifacts from which results are derived. These
-documents can then directly be published, along with the underlying
-artifacts on platforms like f1000[^35] and ResearchEquals[^36], and
-platforms like ResearchHub[^37] connect publication directly to a
-github-like repository that hosts the artifacts. At Delft University of technology, in a proof-of-concept built and designed by students that we called Alexandria[^38]. Specifically, we extend the idea of artifact-inclusive publication to include *micro-publication* - the publication of scientific contributions smaller than complete manuscripts - in *collaborative articles* - articles written and edited by communities, similar to wikipedia, but differing in that they are also peer-reviewed, and containing scientific artifacts in repositories like github. 
+Artifact-inclusive, and artifact-specific publication is also possible,
+though not yet widely established. Furthermore research output in the
+form of manuscripts, and artifacts resulting from research projects can
+directly be combined for publication. Platforms like Quarto[^33] and
+Jupyter[^34] allow for the creation of reproducible documents, which
+combine text and text formatting, with the output of code snippets,
+media, and visualizations. Thus the papers that we read could be
+rendered from documents that also contain all the code and artifacts
+from which results are derived. These documents can then directly be
+published, along with the underlying artifacts on platforms like
+f1000[^35] and ResearchEquals[^36]. Further, platforms like
+ResearchHub[^37] connect publication directly to a github-like
+repository that hosts the artifacts. At Delft University of technology,
+in a proof-of-concept built and designed by students that we called
+Alexandria[^38], we extend the idea of the
+artifact-inclusive/artifact-specific publication to include
+*micro-publication* - the publication of scientific contributions
+smaller than complete manuscripts - in *collaborative articles* -
+articles written and edited by communities, similar to wikipedia, but
+differing in that they are also peer-reviewed, and containing scientific
+artifacts in repositories like github.
 
 [^33]: https://quarto.org/
 
@@ -663,30 +680,71 @@ github-like repository that hosts the artifacts. At Delft University of technolo
 
 [^38]: https://alexandria.ewi.tudelft.nl/about
 
-While it is unclear what direction all of these ideas will take, the general themes of living, collaborative manuscripts and scientific artifacts allow for a number of potential benefits to the AI and related fields: a) they suggests a more efficient pipeline from research project to publication, as the materials used during the research phase directly become the submitted manuscript and accompanying artifacts, thereby shrinking the distance between research project and report, b) considering how many artifacts play a role in AI and related field science, the publication and maintenance of artifacts in addition to the manuscript allows for more of the contributions of scientists be visible, in addition to current, and thus immediately re-usable, c) they provide the infrastructure within peer-reviewed academia that allows for coordination of collaborative scientific and annotation labor, especially as regards the collection of training and evaluation data. 
+While it is unclear what direction all of these ideas will take, and
+whether any may become a viable alternative to the traditional journal
+or conference publication, the general themes of living, collaborative
+manuscripts and scientific artifacts allow for a number of potential
+benefits to the AI and related fields: a) they suggest a more efficient
+pipeline from research project to publication, as the materials used
+during the research phase directly become the submitted manuscript and
+accompanying artifacts, thereby shrinking the distance between research
+project and report, b) considering how many artifacts play a role in AI
+and related field science, the publication and maintenance of artifacts
+in addition to the manuscript allows for more of the contributions of
+scientists be visible, in addition to current, and thus immediately
+re-usable, c) they provide the infrastructure within peer-reviewed
+academia that allows for coordination of collaborative scientific and
+annotation labor, especially as regards the collection of training and
+evaluation data.
 
 ### AI Metrics as a field
 
-Data used for training and evaluation of models is of central
-importance. Solutions to problems in both training and evaluation data
-collection require deliberate study for standards to improve and
-disseminate. In other words, beyond the implementation of currently
-thought best practices, is the requirement that the best practices be
-improved along with demands, and knowledge of them disseminated such
-that general practice is affected.
-
-As it stands, there is no central field of study for this topic, despite
-its central importance to all AI-related fields. Other disciplines
+More recognition of AI Metrics as a formalized research field
+[@gignac2024defining] would allow for the systematic study of how and
+what we measure from AI system outputs, with a focus on designing,
+validating, and maintaining evaluation instruments. As other disciplines
 (psychology, economics, software engineering) have entire fields
 dedicated to the design, collection, analysis, and reporting of data
 that involves human behavior (psychometrics, econometrics, software
-testing). Although datasets that become 'load bearing' are frequently
-cited e.g. Imagenet, AI Metrics itself is not a central focus at the
-most highly cited academic publication venues, nor is there a focused
-publication venue or conference. Thus, crucial topics remain
-under-resourced and under-researched.
+testing), so too should AI and related fields. As it stands, there are
+little to no dedicated venues for the publications (i.e. journals,
+conferences, but possibly also dedicated, regular tracks at conferences)
+for this field of study, despite its central importance, and the
+ballooning number of benchmarks and claims of AI system capabilities.
 
-Benchmarks and measurement
+The focus of AI metrics would be to establish processes for defining
+measurement targets, and developing and validating the instruments used
+to assess these targets from AI system behaviors. Such a dedicated field
+could develop epistemological and methodological frameworks for how to
+define constructs, determine the requirements of processes designed to
+measure them, methods to estimate the resources needed to meet
+requirements (e.g. the number of annotators, or items to in the training
+set), estimate the reliability and construct validity of measurement
+methods, and identify potential sources of measurement error. This
+includes strategies for sampling training data, annotation interfaces,
+schemas and protocols, the establishment of benchmarks, and any other
+potential methods for measuring constructs like fairness, or
+'intelligence' in AI model outputs. Without a dedicated field of study,
+many current practices remain ad hoc, with limited scrutiny despite
+their far-reaching influence.
+
+Many benchmarks were developed years ago under very different
+assumptions and are re-used, some with incredible frequency e.g.
+Imagenet, without re-examination. AI Metrics could investigate not just
+initial design of datasets and benchmarks, but also their current
+usefulness as models and deployment environments evolve. Futher, in
+cases where the development of the benchmark was costly, AI metrics can
+investigated what adjustments to make so that they can be made useful -
+e.g. via re-sampling, re-or annotation.
+
+Solutions to problems in both training and evaluation data collection
+require deliberate study for standards to improve and disseminate. In
+other words, beyond the implementation of currently thought best
+practices, is the requirement that the best practices be improved along
+with demands, and knowledge of them disseminated such that general
+practice is affected. As part of this, the field must include
+investigations of the necessary infrastructure to support and
+disseminate best practices, and best make use of available labor.
 
 ## Concluding Call to Action
 
@@ -695,14 +753,16 @@ and safer, more meaningful AI systems, but is costly, even in comparison
 to the current amount of effort and funding dedicated to AI (and related
 fields) research. A key priority is that the AI/ML research community,
 conferences, funding agencies, and publishers must recognize data
-research, analysis as well as creation, as a research contribution.New
+research, analysis as well as creation, as a research contribution. New
 formats like data-focused Registered Reports and micropublications
 should be adopted to 1) distribute efforts, and 2) aggregate knowledge.
 
-Further, we must rethink how we allocate labor. Load-bearing datasets
-require more effort than the initial collection and subsequent
-distribution, but also maintenance. This beyond research required to
-create useful datasets, we also require resources to maintain them.
+Further, we must rethink how we allocate labor.
+
+Load-bearing datasets require more effort than the initial collection
+and subsequent distribution, but also maintenance. This beyond research
+required to create useful datasets, we also require resources to
+maintain them.
 
 # Appendix {#sec-appendix}
 
