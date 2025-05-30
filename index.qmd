@@ -582,11 +582,12 @@ annotations over crowd-sourcing platforms like mTurk.
 
 ### Publication and Maintenance of academic artifacts
 
-A number of publication formats currently exist that can assist in
+Given the large volume of papers published on AI and related fields, a
+number of publication formats currently exist that can assist in
 thoroughly summarizing and synthesizing evidence for topics in which
-there is sufficient volume of publications. *Systematic Reviews*[^26]
-and *Meta-Analyses*[^27] attempt to gather all relevant works on a
-topic, synthesize the evidence, extract insights and highligh research
+there is high publication volume. *Systematic Reviews*[^26] and
+*Meta-Analyses*[^27] attempt to gather all relevant works on a topic,
+synthesize the evidence, extract insights and highlight research
 opportunities on a given topic. In fields where there is an exceptional
 amount of work on a topic, or set of related topics, *Umbrella
 Reviews*[^28] attempt to synthesize collections of systematic reviews
@@ -600,8 +601,10 @@ reviewing, and synthesizing available evidence, but include an
 *a-priori* commitment to gather and update what is reported for a given
 length of time. Although searching and selecting items for inclusion can
 be time consuming, they can be assisted with automation
-[@thomas2017living; @schmidt2025data], for which many open-source, free tools are
-available (e.g. asreview[^29]). And thus, machine learning tools can contribute to the rapid synthesis of quickly evolving scientific evidence. 
+[@thomas2017living; @schmidt2025data], for which many open-source, free
+tools are available (e.g. asreview[^29]). Thus, machine learning tools
+can contribute to the rapid synthesis of quickly evolving scientific
+evidence.
 
 [^26]: https://en.wikipedia.org/wiki/Systematic_review
 
@@ -611,20 +614,23 @@ available (e.g. asreview[^29]). And thus, machine learning tools can contribute 
 
 [^29]: https://asreview.nl/
 
-The practice of science produces a number of artifacts beyond the paper
-that reports results of the work, including data, models, code /
-notebooks, configurations and lab notes. These artifacts are a relevant
-part of the work of science, although they are often obscured from view,
-and like software artifacts, would benefit from regular maintenance
-[@liem2023treat]. With AI-related artifacts specifically, sites like
-Replicate[^30] and Huggingface[^31] have emerged that allow for hosting,
-documentation, and sharing of artifacts. Sites like the Open Science
-Framework[^32] have emerged that allow for the flexible
-documentation of various components of any scientific workflow as well
-as updates. Similarly, online git-compatible
-repositories like GitHub can be leveraged not only as containers for the
-artifacts, but as easily maintainable documentation of the evolution of
-various projects [@wattanakriengkrai2022github]. Taken together, these technologies allow for creation, versioning, and maintenance of artifacts of a research project similar to software artifacts -  *Living Scientific Artifacts*. 
+The practice of AI and related science produces a number of artifacts
+beyond manuscript that reports results of the work, including data,
+models, code / notebooks, configurations and lab notes. These artifacts
+are a relevant part of the work of science, although they are often
+obscured from view, and like software artifacts, would benefit from
+regular maintenance [@liem2023treat]. With AI-related artifacts
+specifically, sites like Replicate[^30] and Huggingface[^31] have
+emerged that allow for hosting, documentation, sharing and discussion.
+More widely used in other fields, sites like the Open Science
+Framework[^32] have emerged that allow for the flexible documentation of
+various components of any scientific workflow as well as updates.
+Similarly, online git-compatible repositories like GitHub can be
+leveraged not only as containers for the artifacts, but as easily
+maintainable documentation of the evolution of various projects
+[@wattanakriengkrai2022github]. Taken together, these technologies allow
+for creation, versioning, and maintenance of artifacts of a research
+project similar to software artifacts - *Living Scientific Artifacts*. 
 
 [^30]: https://replicate.com/
 
@@ -632,7 +638,18 @@ various projects [@wattanakriengkrai2022github]. Taken together, these technolog
 
 [^32]: https://osf.io/
 
-Research output in the form of manuscripts, and artifacts resulting from research projects can directly be combined for publication. Platforms like Quarto[^33] and Jupyter[^34] allow for the creation reproducible documents, which combine text and text formatting, with the output of code snippets, media, and visualizations. Thus the papers that we read could be rendered from documents that also contain all the code and artifacts from which results are derived. These documents can then directly be published, along with the underlying artifacts on platforms like f1000[^35] and ResearchEquals[^36], and platforms like ResearchHub[^37] connect publication directly to a github-like repository that hosts the artifacts. Taken together, this suggests the potential to shrink the distance between published papers and the working environment of scientists.
+Artifact-inclusive publication is also possible, though not yet widely
+established. Research output in the form of manuscripts, and artifacts
+resulting from research projects can directly be combined for
+publication. Platforms like Quarto[^33] and Jupyter[^34] allow for the
+creation reproducible documents, which combine text and text formatting,
+with the output of code snippets, media, and visualizations. Thus the
+papers that we read could be rendered from documents that also contain
+all the code and artifacts from which results are derived. These
+documents can then directly be published, along with the underlying
+artifacts on platforms like f1000[^35] and ResearchEquals[^36], and
+platforms like ResearchHub[^37] connect publication directly to a
+github-like repository that hosts the artifacts. At Delft University of technology, in a proof-of-concept built and designed by students that we called Alexandria[^38]. Specifically, we extend the idea of artifact-inclusive publication to include *micro-publication* - the publication of scientific contributions smaller than complete manuscripts - in *collaborative articles* - articles written and edited by communities, similar to wikipedia, but differing in that they are also peer-reviewed, and containing scientific artifacts in repositories like github. 
 
 [^33]: https://quarto.org/
 
@@ -644,8 +661,9 @@ Research output in the form of manuscripts, and artifacts resulting from researc
 
 [^37]: https://www.researchhub.com/about
 
-Open Review allows for peer reviews of works, as well as a trail of the
-reviews.
+[^38]: https://alexandria.ewi.tudelft.nl/about
+
+While it is unclear what direction all of these ideas will take, the general themes of living, collaborative manuscripts and scientific artifacts allow for a number of potential benefits to the AI and related fields: a) they suggests a more efficient pipeline from research project to publication, as the materials used during the research phase directly become the submitted manuscript and accompanying artifacts, thereby shrinking the distance between research project and report, b) considering how many artifacts play a role in AI and related field science, the publication and maintenance of artifacts in addition to the manuscript allows for more of the contributions of scientists be visible, in addition to current, and thus immediately re-usable, c) they provide the infrastructure within peer-reviewed academia that allows for coordination of collaborative scientific and annotation labor, especially as regards the collection of training and evaluation data. 
 
 ### AI Metrics as a field
 
